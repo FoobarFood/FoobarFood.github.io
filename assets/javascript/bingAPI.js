@@ -16,7 +16,7 @@ var bingAPI = (function(){
     
     return queryUrl;
   }
-
+  
   // returns AJAX promise
   function getData(address) {
     var queryUrl = _getQueryUrl(address);
@@ -34,4 +34,5 @@ var bingAPI = (function(){
     getData: getData,
     getCoordinates: getCoordinates
   }
+  
 })();
