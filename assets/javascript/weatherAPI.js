@@ -1,15 +1,7 @@
-// bingAPI.getData('1600 pennsylvania ave washington d.c.')
-//   .then(function(response){
-//     var coordinates = bingAPI.getCoordinates(response);
+ 
+ var userLocation= "";
+ 
 
-//     weatherAPI.weatherData(coordinates)
-//         .then(function(response){
-//             var weatherDetails = weatherAPI.getWeatherDetails(response);
-//             console.log(weatherDetails);
-//             // change the Dom
-//         });
-
-//   });
 
 var weatherAPI = (function(){
     var APIKey = "2d1b540b6f1afe91eb3a62874c28c56f";
@@ -40,5 +32,39 @@ var weatherAPI = (function(){
         getWeatherDetails: getWeatherDetails
     }
 })();
+
+function locator() {
+
+    var nameInput =  document.getElementById('location');
+
+document.querySelector('form.pure-form').addEventListener('submit', function (e) {
+
+    //prevent the normal submission of the form
+    e.preventDefault();
+
+    console.log(nameInput.value); 
+
+    userLocation = nameInput.value;
+    
+    bingAPI.getData(userLocation)
+    .then(function(response){
+      var coordinates = bingAPI.getCoordinates(response);
+ 
+      weatherAPI.weatherData(coordinates)
+          .then(function(response){
+              var weatherDetails = weatherAPI.getWeatherDetails(response);
+              console.log(weatherDetails);
+              console.log(coordinates);
+              // change the Dom
+          });
+ 
+    });
+    
+    
+});
+}
+
+locator();
+
 
 
