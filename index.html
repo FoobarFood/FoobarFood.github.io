@@ -18,19 +18,25 @@
 </head>
 
 <body>
-
-  <h1>Weather Yeee</h1>
-
-  
-
   <div class="jumbotron">
     <div class="row">
       <div class="col-lg-12 col-md-6">
         <h1 class="text-center">Foobar Foods Placeholder</h1>
+        <form>
+            <div class="form-row justify-content-center">
+               <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Name</label>
+                    <input type="text" class="form-control mb-2" id="location" placeholder="New York City, NY or Zip Code">
+                  </div>
+                  <div class="col-auto">
+                      <button type="submit" class="btn btn-light mb-2" id="btnSub">Submit</button>
+                    </div>
+            </div>
+          </form>
       </div>
     </div>
   </div>
-  <!-- inserted div that tells you your location and the weather -->
+  <!-- inserted div that tells you your location and the weather in a string -->
   <div class="container popInDiv">
     <div class="row">
       <div class="col-lg-12 col-md-6">
@@ -43,10 +49,10 @@
       <div class="col-lg-6 col-md-3" id="recipedSuggestions">
         recipe suggestions go here
       </div>
-      <div class="col-lg-6 col-md-3" id="foodImage" style="background:grey">
+      <div class="col-lg-6 col-md-3" id="foodImage">
         image goes here
         <div class="row">
-          <div class="col-lg-6 col-md-3" id="recipe" style="background:grey">
+          <div class="col-lg-6 col-md-3" id="recipe">
             recipes go here
           </div>
         </div>
@@ -54,12 +60,14 @@
     </div>
   </div>
 
+
   <!-- Footer -->
   <footer class="sticky-footer bg-primary border-top border-info">
     <div class="container">
       &copy; 2018
     </div>
   </footer>
+</div>
 
   <!-- jQuery, Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>

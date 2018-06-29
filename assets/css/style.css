@@ -6,6 +6,25 @@ html {
 body {
   margin-bottom: 3.5rem;
 }
+h1 {
+  color: #df744a;
+}
+
+.jumbotron {
+  background-color: #bfd8d2;
+}
+.btn {
+  background-color: whitesmoke;
+  color: black;
+  border-color: whitesmoke;
+}
+.btn:hover {
+  background-color: #dc8239;
+  border-color:#dc8239;
+}
+
+
+
 
 .sticky-footer {
   position: absolute;
