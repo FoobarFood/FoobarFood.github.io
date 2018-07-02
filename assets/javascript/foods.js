@@ -128,12 +128,12 @@ var FOODS = {
         WeatherNumber: 222,
         Meal: "Snack"
      },
-     IDBOpenDBRequest : {
+    Dounts: {
         TempNumber: 1111,
         WeatherNumber: 222,
         Meal: "Breakfast"
      },
-     Mozzerella_Sticks : {
+     Mozzarrella_Sticks : {
         TempNumber: 1111,
         WeatherNumber: 222,
         Meal: "Snack"
@@ -244,5 +244,3 @@ var FOODS = {
         Meal: "Breakfast"
       },
 };
-
-console.log('i ran');
