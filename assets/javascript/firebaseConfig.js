@@ -12,12 +12,7 @@ var FirebaseConfig = (function() {
   }
 
   function seed() {
-    firebase.database().ref('foods').once('value')
-      .then(function(snapshot) {
-        if (!snapshot.val()) {
-          firebase.database().ref('foods').set(FOODS);
-        };
-      });
+    firebase.database().ref('foods').set(FOODS);
   }
 
   function resetFoods() {
