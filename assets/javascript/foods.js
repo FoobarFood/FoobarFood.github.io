@@ -101,7 +101,6 @@ var FOODS = {
         WeatherNumber: 220,
         Meal: "Snack"
      },
-
      PB_and_J : {
         TempNumber: 1111,
         WeatherNumber: 222,
@@ -117,7 +116,6 @@ var FOODS = {
         WeatherNumber: 2,
         Meal: "Lunch"
      },
-     
      Pizza : {
         TempNumber: 1111,
         WeatherNumber: 222,
