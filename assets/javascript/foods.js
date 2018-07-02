@@ -159,7 +159,7 @@ var FOODS = {
         Meal: "Lunch"
      },
      Nachos : {
-        TempNumber: ,
+        TempNumber: 1111,
         WeatherNumber: 1111,
         Meal: "Snack"
      },
@@ -171,17 +171,17 @@ var FOODS = {
      Baked_Beans: {
         TempNumber: 111,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Casserole: {
         TempNumber: 11,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Chowder: {
         TempNumber: 1111,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Fried_Chicken: {
         TempNumber: 1110,
@@ -191,17 +191,17 @@ var FOODS = {
       Meatload: {
         TempNumber: 11,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Sloppy_Joes: {
         TempNumber: 1110,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Chicken_Alfredo: {
         TempNumber: 11,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Spaghetti_and_Meatballs: {
         TempNumber: 111,
@@ -211,22 +211,22 @@ var FOODS = {
       Chicken_Pot_Pie: {
         TempNumber: 11,
         WeatherNumber: 222,
-        Meal: “Lunch”
+        Meal: "Lunch"
       },
       Chili: {
         TempNumber: 11,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Ratatouille: {
         TempNumber: 111,
         WeatherNumber: 222,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       French_Onion_Soup: {
         TempNumber: 1,
         WeatherNumber: 2,
-        Meal: “Dinner”
+        Meal: "Dinner"
       },
       Baked_Ziti: {
         TempNumber: 111,
@@ -236,7 +236,7 @@ var FOODS = {
       Dumplings: {
         TempNumber: 11,
         WeatherNumber: 222,
-        Meal: “Snack”
+        Meal: "Snack"
       },
       Omelette: {
         TempNumber: 111,
@@ -244,3 +244,5 @@ var FOODS = {
         Meal: "Breakfast"
       },
 };
+
+console.log('i ran');
