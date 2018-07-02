@@ -30,7 +30,6 @@ var recipeSearchAPI = (function(){
     return topRecipes;
   }
 
-
   return {
     recipeData: recipeData,
     recipeDataExtraction: recipeDataExtraction
