@@ -50,10 +50,13 @@ clickListeners.locator = function() {
               View.addFoodsToSuggestionList(filteredMeals[randomIndices[i]]);
             };
 
-            
-            
-            
-       
+           
+  
+                }
+              
+              //shows Main Body Div
+              $("#mainBody").removeAttr("style");
+            }
           });
       });
     });
