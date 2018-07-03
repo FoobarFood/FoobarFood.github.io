@@ -49,14 +49,9 @@ clickListeners.locator = function() {
             for (var i = 0; i < randomIndices.length; i++) {
               View.addFoodsToSuggestionList(filteredMeals[randomIndices[i]]);
             };
-
-           
-  
-                }
               
-              //shows Main Body Div
-              $("#mainBody").removeAttr("style");
-            }
+            //shows Main Body Div
+            $("#mainBody").removeAttr("style");
           });
       });
     });
@@ -65,7 +60,7 @@ clickListeners.locator = function() {
 
 
 clickListeners.foodBtn = function() {
-  $('.foodBtn').on('click', function(){
+  $('.btn-group-vertical').on('click', '.foodBtn', function(){
     var foodSuggestion = $(this).attr('data-name');
 
     recipeSearchAPI.recipeData(foodSuggestion).then(function(response){
