@@ -1,8 +1,3 @@
- 
- var userLocation= "";
- 
-
-
 var weatherAPI = (function(){
     var APIKey = "2d1b540b6f1afe91eb3a62874c28c56f";
 
@@ -27,7 +22,6 @@ var weatherAPI = (function(){
     }
 
     return {
-        queryURL: queryURL,
         weatherData: weatherData,
         getWeatherDetails: getWeatherDetails
     }

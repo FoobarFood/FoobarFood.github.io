@@ -30,9 +30,14 @@ var bingAPI = (function(){
     return bingResponse.resourceSets[0].resources[0].geocodePoints[0].coordinates;
   }
 
+  function getAddress(bingResponse) {
+    return bingResponse.resourceSets[0].resources[0].address;
+  }
+
   return {
     getData: getData,
-    getCoordinates: getCoordinates
+    getCoordinates: getCoordinates,
+    getAddress: getAddress
   }
   
 })();
