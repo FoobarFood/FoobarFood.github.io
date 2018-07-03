@@ -26,12 +26,26 @@
         <form>
           <div class="form-row justify-content-center">
             <div class="col-auto">
-              <label class="sr-only" for="inlineFormInput">Name</label>
-              <input type="text" class="form-control" id="location-input" placeholder="New York City, NY or Zip Code">
+              <input type="text" class="form-control" id="location-input" placeholder="City, State or Zip Code">
             </div>
+            <div class="row">
+              <div class="col">
+            <div class="form-group col-auto">
+              <select class="form-control" id="mealSelect">
+                <option>Everything!</option>
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+                <option>Snack</option>
+              </select>
+            </div>
+          </div>
+          </div>
+          <div class="row">
             <div class="col-auto">
               <button type="submit" class="btn btn-light mb-2" id="location-submit">Submit</button>
             </div>
+          </div>
           </div>
         </form>
       </div>
