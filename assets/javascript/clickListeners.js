@@ -37,6 +37,9 @@ clickListeners.locator = function() {
 
             console.log(comfortFoods);
 
+
+           
+
             /// TODO: add if statement for possible everything selection
 
             var filteredMeals = [];
@@ -44,9 +47,11 @@ clickListeners.locator = function() {
                 if (comfortFoods[i].meal == $("#mealSelect").val()) {
                     filteredMeals.push(comfortFoods[i]);
                 }
-                
+              
+              //shows Main Body Div
+              $("#mainBody").removeAttr("style");
             }
-            console.log(filteredMeals);
+
           });
       });
     });
