@@ -31,27 +31,32 @@ clickListeners.locator = function() {
                   name: childSnapshot.key,
                   meal: childSnapshot.val().Meal,
                 });
-
-              }
+              };
             });
-
-            console.log(comfortFoods);
-
-
-           
-
-            /// TODO: add if statement for possible everything selection
 
             var filteredMeals = [];
             for (var i = 0; i < comfortFoods.length; i++) {
                 if (comfortFoods[i].meal == $("#mealSelect").val()) {
                     filteredMeals.push(comfortFoods[i]);
+                };  
+            };
+            if ($("#mealSelect").val() === 'Everything!' ) {
+              filteredMeals = comfortFoods;
+            };
+            var randomIndices = Utility.getRandomIndices(filteredMeals.length);
+
+            $('.btn-group-vertical').empty(); 
+            for (var i = 0; i < randomIndices.length; i++) {
+              View.addFoodsToSuggestionList(filteredMeals[randomIndices[i]]);
+            };
+
+           
+  
                 }
               
               //shows Main Body Div
               $("#mainBody").removeAttr("style");
             }
-
           });
       });
     });
