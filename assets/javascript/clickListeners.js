@@ -7,13 +7,15 @@ clickListeners.locator = function() {
     e.preventDefault();
 
     var locationInput = $('#location-input').val();
-      
+  
     bingAPI.getData(locationInput).then(function(response){
       var coordinates = bingAPI.getCoordinates(response);
+      var cleanName = bingAPI.getCleanName(response);
 
-      weatherAPI.weatherData(coordinates).then(function(response){
+           weatherAPI.weatherData(coordinates).then(function(response){
           var weatherDetails = weatherAPI.getWeatherDetails(response);
 
+          $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature} with ${weatherDetails.description}. The perfect day for...`)
 
           var tempDesc = Utility.convertTemptoDescription(weatherDetails.temperature);
           var weatherCat = Utility.convertWeathertoCategory(weatherDetails.description);

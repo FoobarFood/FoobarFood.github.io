@@ -1,6 +1,7 @@
 // documentation: https://msdn.microsoft.com/en-us/library/ff701714.aspx
 //
 // usage of module below:
+
 // bingAPI.getData(address)
 //   .then(function(response){
 //     console.log(bingAPI.getCoordinates(response));
@@ -24,6 +25,7 @@ var bingAPI = (function(){
       url: queryUrl,
       method: 'GET'
     });
+    
   }
 
   function getCoordinates(bingResponse) {
@@ -33,11 +35,16 @@ var bingAPI = (function(){
   function getAddress(bingResponse) {
     return bingResponse.resourceSets[0].resources[0].address;
   }
+  function getCleanName(bingResponse) {
+    return bingResponse.resourceSets[0].resources[0].name;
+  }
+
 
   return {
     getData: getData,
     getCoordinates: getCoordinates,
-    getAddress: getAddress
+    getAddress: getAddress,
+    getCleanName: getCleanName
   }
   
 })();
