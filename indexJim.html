@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styleJim.css">
+
+  <!-- firebase link goes here -->
+
+  <!-- api links go here -->
+
+  <title>FoobarFood</title>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-lg-12 col-md-6">
+        <h1 class="text-center">Foobar Foods Placeholder</h1>
+        <form>
+          <div class="form-row justify-content-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput">Name</label>
+              <input type="text" class="form-control" id="location" placeholder="New York City, NY or Zip Code">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-light mb-2" id="btnSub">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- inserted div that tells you your location and the weather in a string -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-6">
+        <p class="text-center popInDiv"><span id="fooString">Today in TOWN it is currently TEMP degrees with WEATHER skies, the perfect day for...</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <!-- left side column -->
+      <div class="col-lg-6 col-md-3" id="recipeSuggestions">
+              <div class="btn-group-vertical btn-block">
+                <button class="btn foodBtn"><span id="foodBtn1">Food</span></button>
+                <button class="btn foodBtn"><span id="foodBtn2">Food</span></button>
+                <button class="btn foodBtn"><span id="foodBtn3">Food</span></button>
+                <button class="btn foodBtn"><span id="foodBtn4">Food</span></button>
+                <button class="btn foodBtn"><span id="foodBtn5">Food</span></button>
+              </div>
+         </div>
+
+      <!-- right side column -->
+      <div class="col-lg-6 col-md-3" id="recipe">
+        <section class="body">
+          <div class="content">
+            <div class="card">
+              <img class="card-img-top" src="http://via.placeholder.com/450x236" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  <span id="recipeTitle1">Food Title 1</span>
+                </h5>
+                <p class="card-text">
+                  <span id="recipeBody1">Text goes here.</span>
+                </p>
+                <a href="#" class="btn btn-primary">Get the Recipe!</a>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="card">
+              <img class="card-img-top" src="http://via.placeholder.com/450x236" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span id="recipeTitle2">Food Title 2</span>
+                </h5>
+                <p class="card-text">
+                  <span id="recipeBody2">Text goes here.</span>
+                </p>
+                <a href="#" class="btn btn-primary">Get the Recipe!</a>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="card">
+              <img class="card-img-top" src="http://via.placeholder.com/450x236" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <span id="recipeTitle3">Food Title 3</span>
+                </h5>
+                <p class="card-text">
+                  <span id="recipeBody3">Text goes here.</span>
+                </p>
+                <a href="#" class="btn btn-primary">Get the Recipe!</a>
+              </div>
+            </div>
+          </div>
+          <article id="pagin">
+            <nav aria-label="Page navigation example">
+
+              <ul id="nav">
+                <li class="active">
+                  <a href="#">1</a>
+                </li>
+                <li>
+                  <a href="#">2</a>
+                </li>
+                <li>
+                  <a href="#">3</a>
+                </li>
+              </ul>
+            </nav>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      Add Your Own Comfort Food
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">I Need...</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="form-group col-12">
+                  <label for="foodName">Food</label>
+                  <input type="food" class="form-control" id="foodName" placeholder="">
+                </div>
+                <div class="form-group col-12">
+                  <label for="mealSelect">Meal Select</label>
+                  <select class="form-control" id="mealSelect">
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Snack</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="checkbox" id="tempSelect">
+                    <p class="formHead">Temperature (F)</p>
+                    <label>
+                      <input type="checkbox" value="veryHot">Very Hot (>90)</label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="hot">Hot (75-90)</label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="tempid">Tempid (50-75)</label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="cold">Cold (
+                      <50)</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="checkbox" id="weatherSelect">
+                    <p class="formHead">Weather</p>
+                    <label>
+                      <input type="checkbox" value="clear">Clear/Sunny</label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="cloudy">Cloudy</label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="rain">Rainy</label>
+                  </div>
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="snow">Snowing</label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="sticky-footer bg-primary border-top border-info">
+    <div class="container">
+      &copy; 2018
+    </div>
+  </footer>
+
+
+  <!-- jQuery, Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+
+
+  <script src="assets/javascript/bingAPI.js"></script>
+  <script src="assets/javascript/weatherAPI.js"></script>
+  <script src="assets/javascript/jsJim.js"></script>
+
+
+</body>
+
+</html>
