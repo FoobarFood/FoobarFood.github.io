@@ -15,7 +15,7 @@ clickListeners.locator = function() {
            weatherAPI.weatherData(coordinates).then(function(response){
           var weatherDetails = weatherAPI.getWeatherDetails(response);
 
-          $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature} with ${weatherDetails.description}. The perfect day for...`)
+          $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature}°F with ${weatherDetails.description}. The perfect day for...`)
 
           var tempDesc = Utility.convertTemptoDescription(weatherDetails.temperature);
           var weatherCat = Utility.convertWeathertoCategory(weatherDetails.description);
@@ -37,6 +37,16 @@ clickListeners.locator = function() {
 
             console.log(comfortFoods);
 
+            /// TODO: add if statement for possible everything selection
+
+            var filteredMeals = [];
+            for (var i = 0; i < comfortFoods.length; i++) {
+                if (comfortFoods[i].meal == $("#mealSelect").val()) {
+                    filteredMeals.push(comfortFoods[i]);
+                }
+                
+            }
+            console.log(filteredMeals);
           });
       });
     });
