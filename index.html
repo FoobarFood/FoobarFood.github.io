@@ -76,43 +76,61 @@
         <section class="body">
           <div class="content">
             <div class="card">
-              <img class="card-img-top" id="img1" src="http://via.placeholder.com/450x236" alt="Card image cap">
+              <img class="card-img-top" id="recipeImg1" src="http://via.placeholder.com/450x236" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title text-center">
-                  <span id="recipeTitle1">Food Title 1</span>
+                  <span id="recipeTitle1"></span>
                 </h5>
+                <h6 class="card-subtitle mb-2 text-muted text-center">
+                  <span id="recipeTime1"></span>
+                </h6>
                 <p class="card-text">
-                  <span id="recipeBody1">Text goes here.</span>
+                  <ul id="recipeIngredients1"></ul>
                 </p>
-                <a href="#" class="btn btn-primary" id = "recipebtn3">Get the Recipe!</a>
+                <a href="#" class="btn btn-primary" id="recipeBtn1" target="_blank">Get the Recipe!</a>
+                <p>
+                  Source: <a href="#" id="recipeSource1" target="_blank"></a>
+                </p>
               </div>
             </div>
           </div>
           <div class="content">
             <div class="card">
-              <img class="card-img-top" id = "img2" src="http://via.placeholder.com/450x236" alt="Card image cap">
+              <img class="card-img-top" id="recipeImg2" src="http://via.placeholder.com/450x236" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">
-                  <span id="recipeTitle2">Food Title 2</span>
+                <h5 class="card-title text-center">
+                  <span id="recipeTitle2"></span>
                 </h5>
+                <h6 class="card-subtitle mb-2 text-muted text-center">
+                  <span id="recipeTime2"></span>
+                </h6>
                 <p class="card-text">
-                  <span id="recipeBody2">Text goes here.</span>
+                  <ul id="recipeIngredients2"></ul>
                 </p>
-                <a href="#" class="btn btn-primary" id = "recipebtn2">Get the Recipe!</a>
+                <a href="#" class="btn btn-primary" id="recipeBtn2" target="_blank">Get the Recipe!</a>
+                <p>
+                  Source: <a href="#" id="recipeSource2" target="_blank"></a>
+                </p>
               </div>
             </div>
           </div>
           <div class="content">
             <div class="card">
-              <img class="card-img-top" id = "img3" src="http://via.placeholder.com/450x236" alt="Card image cap">
+              <img class="card-img-top" id="recipeImg3" src="http://via.placeholder.com/450x236" alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">
-                  <span id="recipeTitle3">Food Title 3</span>
+                <h5 class="card-title text-center">
+                  <span id="recipeTitle3"></span>
                 </h5>
+                <h6 class="card-subtitle mb-2 text-muted text-center">
+                  <span id="recipeTime3"></span>
+                </h6>
                 <p class="card-text">
-                  <span id="recipeBody3">Text goes here.</span>
+                  <ul id="recipeIngredients3"></ul>
                 </p>
-                <a href="#" class="btn btn-primary" id = "recipebtn3" >Get the Recipe!</a>
+                <a href="#" class="btn btn-primary" id="recipeBtn3" target="_blank">Get the Recipe!</a>
+                <p>
+                  Source: <a href="#" id="recipeSource3" target="_blank"></a>
+                </p>
               </div>
             </div>
           </div>
@@ -235,11 +253,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
+  <!-- Moment.js -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script src="assets/javascript/firebaseConfig.js"></script>
   <script src="assets/javascript/firebaseUtility.js"></script>
-  <script src="assets/javascript/utility.js"></script>
   <script src="assets/javascript/foods.js"></script>
 
   <!-- APIs -->
@@ -250,11 +270,12 @@
   <!-- Other App Supporting Files -->
   <script src="assets/javascript/clickListeners.js"></script>
   <script src="assets/javascript/view.js"></script>
+  <script src="assets/javascript/utility.js"></script>
 
   <!-- App -->
   
   <script src="assets/javascript/app.js"></script>
-  <script src = "assets/javascript/jsJim.js"></script>
+  <script src="assets/javascript/jsJim.js"></script>
 </body>
 
 </html>

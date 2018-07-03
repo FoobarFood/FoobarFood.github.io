@@ -63,3 +63,18 @@ clickListeners.locator = function() {
   });
 };
 
+
+clickListeners.foodBtn = function() {
+  $('.foodBtn').on('click', function(){
+    var foodSuggestion = $(this).attr('data-name');
+
+    recipeSearchAPI.recipeData(foodSuggestion).then(function(response){
+      var data = recipeSearchAPI.recipeDataExtraction(response);
+
+      for (var i = 0; i < data.length; i++) {
+        View.addRecipeToRecipeInfoSection(i, data[i]);
+      };
+    });
+
+  });
+}
