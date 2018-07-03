@@ -1,6 +1,7 @@
 var App = (function(){
   function init() {
     FirebaseConfig.init();
+    clickListeners.locator();
   }
 
   return {
@@ -12,42 +13,6 @@ var App = (function(){
 $(document).ready(function(){
   App.init();
 });
-
-//Weather Stuff 
-
- 
-// var userLocation= "";
- 
-// function locator() {
-
-//   var nameInput =  document.getElementById('location');
-
-// document.querySelector('form.pure-form').addEventListener('submit', function (e) {
-
-//   //prevent the normal submission of the form
-//   e.preventDefault();
-
-//   console.log(nameInput.value); 
-
-//   userLocation = nameInput.value;
-  
-//   bingAPI.getData(userLocation)
-//   .then(function(response){
-//     var coordinates = bingAPI.getCoordinates(response);
-
-//     weatherAPI.weatherData(coordinates)
-//         .then(function(response){
-//             var weatherDetails = weatherAPI.getWeatherDetails(response);
-//             console.log(weatherDetails);
-//             console.log(coordinates);
-//             // change the Dom
-//         });
-
-//   });
-  
-  
-// });
-// }
 
 // locator();
 
