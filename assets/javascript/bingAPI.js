@@ -13,7 +13,7 @@ var bingAPI = (function(){
   function _getQueryUrl(address) {
     var address = address.replace(/ /g, '%20');
 
-    var queryUrl = `http://dev.virtualearth.net/REST/v1/Locations?q=${address}&maxResults=1&key=${api_key}`;
+    var queryUrl = `https://dev.virtualearth.net/REST/v1/Locations?q=${address}&maxResults=1&key=${api_key}`;
     
     return queryUrl;
   }
