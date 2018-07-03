@@ -1,13 +1,23 @@
 // Yummly API docs: https://developer.yummly.com/documentation
 
+// Yummly Search API
+// Attribution: 
+// logo- https://static.yummly.co/api-logo.png
+// url- https://www.yummly.co/recipes/
+/* Usage:
+recipeSearchAPI.recipeData(recipeSearchTerm).then(function(response){
+  var data = recipeSearchAPI.recipeDataExtraction(response);
+  // do something with data...
+  console.log(data);
+});
+*/
 var recipeSearchAPI = (function(){
   var api_key = '3cbe02c27769bbeaebe8044f1e437cef';
   var app_id = 'f857dc17';
-  var topRecipes = [];
 
   function recipeSearchURL(recipe) {
     var recipe = recipe.replace(/ /g, '+');
-    var recipeURL = `http://api.yummly.com/v1/api/recipes?_app_id=${app_id}&_app_key=${api_key}&q=${recipe}&requirePictures=true`
+    var recipeURL = `https://api.yummly.com/v1/api/recipes?_app_id=${app_id}&_app_key=${api_key}&q=${recipe}&requirePictures=true`
     return recipeURL;
   }
 
@@ -19,7 +29,9 @@ var recipeSearchAPI = (function(){
   }
 
   function recipeDataExtraction(response) {
+    var topRecipes = [];
     var recipeResults = response.matches.splice(0,3);
+
     for (var i=0; i<recipeResults.length; i++){
       var recipeObj = {
         id: recipeResults[i].id,
@@ -53,7 +65,7 @@ var getRecipeAPI = (function(){
   // returns AJAX promise
   function requestData(recipeId) {
     return $.ajax({
-      url: `http://api.yummly.com/v1/api/recipe/${recipeId}?_app_id=${appId}&_app_key=${appKey}`,
+      url: `https://api.yummly.com/v1/api/recipe/${recipeId}?_app_id=${appId}&_app_key=${appKey}`,
       method: 'GET'
     });
   }
