@@ -16,7 +16,7 @@ var recipeSearchAPI = (function(){
   var app_id = 'f857dc17';
 
   function recipeSearchURL(recipe) {
-    var recipe = recipe.replace(/ /g, '+');
+    var recipe = recipe.replace(/_/g, '+');
     var recipeURL = `https://api.yummly.com/v1/api/recipes?_app_id=${app_id}&_app_key=${api_key}&q=${recipe}&requirePictures=true`
     return recipeURL;
   }
@@ -37,7 +37,8 @@ var recipeSearchAPI = (function(){
         id: recipeResults[i].id,
         imageUrl: recipeResults[i].imageUrlsBySize['90'],
         ingredients: recipeResults[i].ingredients,
-        title: recipeResults[i].recipeName
+        title: recipeResults[i].recipeName,
+        totalTimeInSeconds: recipeResults[i].totalTimeInSeconds
       }
       topRecipes.push(recipeObj);
     }

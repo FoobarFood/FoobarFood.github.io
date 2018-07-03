@@ -2,6 +2,7 @@ var App = (function(){
   function init() {
     FirebaseConfig.init();
     clickListeners.locator();
+    clickListeners.foodBtn();
   }
 
   return {
