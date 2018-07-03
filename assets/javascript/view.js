@@ -19,4 +19,15 @@ View.addRecipeToRecipeInfoSection = function(index, recipe) {
     $(`#recipeSource${index+1}`).attr('href', data.source.recipeUrl);
     $(`#recipeSource${index+1}`).text(data.source.displayName);
   });
-}
+};
+
+View.addFoodsToSuggestionList = function(foodObj) {
+
+    var $button = $('<button>', {
+        class: 'btn foodBtn',
+        text: foodObj.name.replace(/_/g, ' '),
+        'data-name': foodObj.name
+    });
+
+    $('.btn-group-vertical').append($button);
+};

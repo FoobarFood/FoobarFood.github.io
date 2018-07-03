@@ -80,5 +80,20 @@ Utility.checkFoodAgainstWeatherDesc = function (weatherCat, foodObject) {
 
 }
 
+Utility.getRandomIndices = function(arrayLength) {
+    var indexes = [];
+    var temp, randIdx;
 
+    for(var i = 0; i < arrayLength; i++) {
+        indexes[i] = i;
+    };
+   
+    for (var i = 0; i < arrayLength; i++) {
+      randIdx = Math.floor(Math.random() * arrayLength);
+      temp = indexes[i];
+      indexes[i] = indexes[randIdx];
+      indexes[randIdx] = temp;
+    }
+    return indexes.splice(0, 5);
+}
 

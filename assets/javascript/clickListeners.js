@@ -15,7 +15,7 @@ clickListeners.locator = function() {
            weatherAPI.weatherData(coordinates).then(function(response){
           var weatherDetails = weatherAPI.getWeatherDetails(response);
 
-          $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature} with ${weatherDetails.description}. The perfect day for...`)
+          $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature}°F with ${weatherDetails.description}. The perfect day for...`)
 
           var tempDesc = Utility.convertTemptoDescription(weatherDetails.temperature);
           var weatherCat = Utility.convertWeathertoCategory(weatherDetails.description);
@@ -31,12 +31,32 @@ clickListeners.locator = function() {
                   name: childSnapshot.key,
                   meal: childSnapshot.val().Meal,
                 });
-
-              }
+              };
             });
 
-            console.log(comfortFoods);
+            var filteredMeals = [];
+            for (var i = 0; i < comfortFoods.length; i++) {
+                if (comfortFoods[i].meal == $("#mealSelect").val()) {
+                    filteredMeals.push(comfortFoods[i]);
+                };  
+            };
+            if ($("#mealSelect").val() === 'Everything!' ) {
+              filteredMeals = comfortFoods;
+            };
+            var randomIndices = Utility.getRandomIndices(filteredMeals.length);
 
+            $('.btn-group-vertical').empty(); 
+            for (var i = 0; i < randomIndices.length; i++) {
+              View.addFoodsToSuggestionList(filteredMeals[randomIndices[i]]);
+            };
+
+           
+  
+                }
+              
+              //shows Main Body Div
+              $("#mainBody").removeAttr("style");
+            }
           });
       });
     });
