@@ -126,7 +126,7 @@ var FOODS = {
         WeatherNumber: 222,
         Meal: "Snack"
      },
-    Dounts: {
+    Donuts: {
         TempNumber: 1111,
         WeatherNumber: 222,
         Meal: "Breakfast"
