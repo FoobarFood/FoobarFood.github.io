@@ -37,6 +37,7 @@ clickListeners.locator = function() {
 
             console.log(comfortFoods);
 
+            $("#mainBody").removeAttr("style");
           });
       });
     });
