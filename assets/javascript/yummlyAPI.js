@@ -1,3 +1,5 @@
+// Yummly API docs: https://developer.yummly.com/documentation
+
 var recipeSearchAPI = (function(){
   var api_key = '3cbe02c27769bbeaebe8044f1e437cef';
   var app_id = 'f857dc17';
@@ -36,40 +38,46 @@ var recipeSearchAPI = (function(){
   }
 })();
 
-//console.log(test);
-//"http://api.yummly.com/v1/api/recipe/" + topRecipes.id[i] + "?_app_id=f857dc17&_app_key=3cbe02c27769bbeaebe8044f1e437cef"
+// Yummly Get Recipe API
+/* Usage: | ex. recipeID = 'Tomato-Tuna-Melts-2250549' 
+getRecipeAPI.requestData(recipeId).then(function(response){
+  var data = getRecipeAPI.extractData(response);
+  // do something with data...
+  console.log(data);
+});
+*/
+var getRecipeAPI = (function(){
+  var appId = 'f857dc17';
+  var appKey = '3cbe02c27769bbeaebe8044f1e437cef';
+  
+  // returns AJAX promise
+  function requestData(recipeId) {
+    return $.ajax({
+      url: `http://api.yummly.com/v1/api/recipe/${recipeId}?_app_id=${appId}&_app_key=${appKey}`,
+      method: 'GET'
+    });
+  }
 
-// var test3 = recipeGetAPI("tuna melt");
+  // returns data object
+  function extractData(response) {
+    return {
+      attribution: {
+        logoUrl: response.attribution.logo,
+        url: response.attribution.url
+      },
+      source: {
+        displayName: response.source.sourceDisplayName,
+        recipeUrl: response.source.sourceRecipeUrl
+      },
+      flavors: response.flavors,
+      imageUrl: response.images[0].hostedLargeUrl,
+      ingredientLines: response.ingredientLines,
+      totalTimeInSeconds: response.totalTimeInSeconds
+    };
+  }
 
-// console.log(test3);
-// var recipeSearchURL = "http://api.yummly.com/v1/api/recipes?_app_id=f857dc17&_app_key=3cbe02c27769bbeaebe8044f1e437cef&q=tuna+melt&requirePictures=true";
-
-// $.ajax({
-//     url: recipeSearchURL,
-//     method: "GET"
-//   })
-
-//     .then(function(response) {
-//       console.log(response)
-
-//   var recipeResults = response.matches;
-//   console.log(recipeResults);
-
-//   var i;
-//   for (i=0; i<3; i++) {
-//       console.log(recipeResults[i]);
-//       var recipeID = recipeResults[i].id;
-//       console.log(recipeID);
-//        var recipeGET = "http://api.yummly.com/v1/api/recipe/" + (recipeID)+ "?_app_id=f857dc17&_app_key=3cbe02c27769bbeaebe8044f1e437cef"
-//       console.log(recipeGET);
-
-
-//       $.ajax({
-//        url: recipeGET,
-//       method: "GET"
-//       })
-
-//     .then(function(response) {
-//       console.log(response)
-//       })
-//   }
+  return {
+    requestData: requestData,
+    extractData: extractData
+  }
+})();
