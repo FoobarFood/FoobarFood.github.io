@@ -15,9 +15,29 @@ clickListeners.locator = function() {
            weatherAPI.weatherData(coordinates).then(function(response){
           var weatherDetails = weatherAPI.getWeatherDetails(response);
 
-          console.log(weatherDetails);
-          // TODO: change the DOM
           $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature} with ${weatherDetails.description}. The perfect day for...`)
+
+          var tempDesc = Utility.convertTemptoDescription(weatherDetails.temperature);
+          var weatherCat = Utility.convertWeathertoCategory(weatherDetails.description);
+
+          firebaseUtility.getFoods().then(function(snapshot){
+            var comfortFoods = [];
+            snapshot.forEach(function (childSnapshot) {
+
+              var food = childSnapshot.val();
+
+              if (Utility.checkFoodAgainstTempDesc(tempDesc, food) && Utility.checkFoodAgainstWeatherDesc(weatherCat, food) ) {
+                comfortFoods.push({
+                  name: childSnapshot.key,
+                  meal: childSnapshot.val().Meal,
+                });
+
+              }
+            });
+
+            console.log(comfortFoods);
+
+          });
       });
     });
   });
