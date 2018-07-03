@@ -15,6 +15,9 @@ $(document).ready(function(){
 
 //Weather Stuff 
 
+ 
+// var userLocation= "";
+ 
 // function locator() {
 
 //   var nameInput =  document.getElementById('location');
