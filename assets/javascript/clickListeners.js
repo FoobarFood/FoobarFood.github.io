@@ -79,6 +79,6 @@ clickListeners.foodBtn = function() {
   });
 }
 
-/*=====
+/*===== clicking on '#addFoodBtn' button
 
 */

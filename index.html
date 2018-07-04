@@ -53,7 +53,8 @@
       </div>
     </div> <!-- /.row -->
   </div>
-  <div class="container" id="mainBody" style="display: none">
+  <!-- style="display: none" -->
+  <div class="container" id="mainBody">
   <!-- Weather Info Section -->
   <div class="container">
     <div class="row">
@@ -155,91 +156,111 @@
     </div> <!-- /.row -->
   </div>
 
-  <!-- Add Comfort Food Section + Modal -->
+  <!-- Add Food Section + Modal -->
   <div class="container">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFoodModal">
       Add Your Own Comfort Food
     </button>
   </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">I Need...</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="row">
-                <div class="form-group col-12">
-                  <label for="foodName">Food</label>
-                  <input type="food" class="form-control" id="foodName" placeholder="">
-                </div>
-                <div class="form-group col-12">
-                  <label for="mealSelect">Meal Select</label>
-                  <select class="form-control" id="mealSelect">
-                    <option>Breakfast</option>
-                    <option>Lunch</option>
-                    <option>Dinner</option>
-                    <option>Snack</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-6">
-                  <div class="checkbox" id="tempSelect">
-                    <p class="formHead">Temperature (F)</p>
-                    <label>
-                      <input type="checkbox" value="veryHot">Very Hot (>90)</label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="hot">Hot (75-90)</label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="tempid">Tempid (50-75)</label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="cold">Cold (
-                      <50)</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="checkbox" id="weatherSelect">
-                    <p class="formHead">Weather</p>
-                    <label>
-                      <input type="checkbox" value="clear">Clear/Sunny</label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="cloudy">Cloudy</label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="rain">Rainy</label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="snow">Snowing</label>
-                  </div>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-          </div>
+  <!-- Modal -->
+  <div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog" aria-labelledby="addFoodModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <!-- Modal Header-->
+        <div class="modal-header">
+          <h5 class="modal-title" id="addFoodModalTitle">I Need...</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      </div>
-    </div>
-  </div> <!-- /.container -->
+
+        <!-- Modal Body (form) -->
+        <div class="modal-body">
+          <form id="addFoodForm">
+            <div class="row">
+              <div class="form-group col-12">
+                <label for="foodInput">Food</label>
+                <input type="food" class="form-control" id="foodInput" placeholder="">
+              </div>
+              <div class="form-group col-12">
+                <label for="mealSelect">Meal</label>
+                <select class="form-control" id="mealSelect">
+                  <option>Everything!</option>
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+                  <option>Snack</option>
+                </select>
+              </div>
+            </div> <!-- /.row -->
+            <div class="row">
+              <div class="form-group col-6" id="tempSelect">
+                <label>Temperature (°F)</label>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" 
+                    name="tempSelect" value="very hot">
+                  <label class="form-check-label">Very Hot <span>(> 90°)</span></label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" 
+                    name="tempSelect" value="hot">
+                  <label class="form-check-label">Hot <span>(76-90°)</span></label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox"
+                    name="tempSelect" value="temperate">
+                  <label class="form-check-label">Temperate <span>(50-75°)</span></label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox"
+                    name="tempSelect" value="cold">
+                  <label class="form-check-label">Cold <span>(< 50°)</span></label>
+                </div>
+              </div>
+
+              <div class="form-group col-6" id="weatherSelect">
+                <label>Weather</label>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" 
+                    name="weatherSelect" value="clear">
+                  <label class="form-check-label">Clear / Sunny</label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" 
+                    name="weatherSelect" value="clouds">
+                  <label class="form-check-label">Cloudy</label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" 
+                    name="weatherSelect" value="other">
+                  <label class="form-check-label">Rain</label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" 
+                    name="weatherSelect" value="other">
+                  <label class="form-check-label">Snow</label>
+                </div>
+                <div class="form-check mb-1">
+                  <input class="form-check-input" type="checkbox" 
+                    name="weatherSelect" value="other">
+                  <label class="form-check-label">Other</label>
+                </div>
+              </div>
+            </div> <!-- /.row -->
+          </form>
+        </div> <!-- /.modal-body -->
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="addFoodBtn">Add Comfort Food</button>
+        </div>
+      </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+  </div> <!-- /.modal -->
 
   <!-- Footer -->
   <footer class="sticky-footer bg-primary border-top border-info">
