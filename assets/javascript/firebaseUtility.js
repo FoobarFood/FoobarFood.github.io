@@ -4,6 +4,10 @@ firebaseUtility.getFoods = function() {
     return firebase.database().ref('foods').once('value');
 }
 
+firebaseUtility.getFavorites = function(limit) {
+    return firebase.database().ref('favorites').once('value');
+}
+
 /*===== adds a food to foods in firebase database
 foodKey is string: Apple_Pie 
 foodValue is object: {
@@ -29,8 +33,4 @@ firebaseUtility.addFavoriteRecipe = function(recipeId) {
            firebase.database().ref('favorites').child(recipeId).set(1);
        };
     });
-}
-
-firebaseUtility.getFavorites = function(limit) {
-    return firebase.database().ref('favorites').once('value');
 }

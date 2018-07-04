@@ -12,7 +12,7 @@ clickListeners.locator = function() {
       var coordinates = bingAPI.getCoordinates(response);
       var cleanName = bingAPI.getCleanName(response);
 
-           weatherAPI.weatherData(coordinates).then(function(response){
+      weatherAPI.weatherData(coordinates).then(function(response){
           var weatherDetails = weatherAPI.getWeatherDetails(response);
 
           $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature}°F with ${weatherDetails.description}. The perfect day for...`)
@@ -58,7 +58,10 @@ clickListeners.locator = function() {
   });
 };
 
-
+/*===== clicking on a '.foodBtn' button
+calls the recipeSearchApi passing in the data-name value of the button,
+which returns a data obj that can be used to dynamically add recipes
+*/
 clickListeners.foodBtn = function() {
   $('.btn-group-vertical').on('click', '.foodBtn', function(){
     var foodSuggestion = $(this).attr('data-name');
@@ -67,9 +70,15 @@ clickListeners.foodBtn = function() {
       var data = recipeSearchAPI.recipeDataExtraction(response);
 
       for (var i = 0; i < data.length; i++) {
-        View.addRecipeToRecipeInfoSection(i, data[i]);
+        var recipeId = data[i].id;
+
+        View.addRecipeToRecipeInfoSection(i, recipeId);
       };
     });
 
   });
 }
+
+/*=====
+
+*/
