@@ -170,23 +170,25 @@
       <div class="modal-content">
 
         <!-- Modal Header-->
-        <div class="modal-header">
+        <div class="modal-header border-0">
           <h5 class="modal-title" id="addFoodModalTitle">I Need...</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
 
+        <hr class="w-100 my-0">
+
         <!-- Modal Body (form) -->
         <div class="modal-body">
           <form id="addFoodForm">
             <div class="row">
               <div class="form-group col-12">
-                <label for="foodInput">Food</label>
+                <label class="lead" for="foodInput">Food</label>
                 <input type="food" class="form-control" id="foodInput" placeholder="">
               </div>
               <div class="form-group col-12">
-                <label for="mealSelect">Meal</label>
+                <label class="lead" for="mealSelect">Meal</label>
                 <select class="form-control" id="mealSelect">
                   <option>Everything!</option>
                   <option>Breakfast</option>
@@ -198,7 +200,7 @@
             </div> <!-- /.row -->
             <div class="row">
               <div class="form-group col-6" id="tempSelect">
-                <label>Temperature (°F)</label>
+                <label class="lead">Temperature (°F)</label>
                 <div class="form-check mb-1">
                   <input class="form-check-input" type="checkbox" 
                     name="tempSelect" value="very hot">
@@ -222,39 +224,37 @@
               </div>
 
               <div class="form-group col-6" id="weatherSelect">
-                <label>Weather</label>
+                <label class="lead">Weather</label>
                 <div class="form-check mb-1">
                   <input class="form-check-input" type="checkbox" 
                     name="weatherSelect" value="clear">
-                  <label class="form-check-label">Clear / Sunny</label>
+                  <label class="form-check-label">
+                    Clear / Sunny <span><i class="fas fa-sun"></i></span>
+                  </label>
                 </div>
                 <div class="form-check mb-1">
                   <input class="form-check-input" type="checkbox" 
                     name="weatherSelect" value="clouds">
-                  <label class="form-check-label">Cloudy</label>
+                  <label class="form-check-label">
+                    Cloudy <span><i class="fas fa-cloud"></i></span>
+                  </label>
                 </div>
                 <div class="form-check mb-1">
                   <input class="form-check-input" type="checkbox" 
                     name="weatherSelect" value="other">
-                  <label class="form-check-label">Rain</label>
-                </div>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox" 
-                    name="weatherSelect" value="other">
-                  <label class="form-check-label">Snow</label>
-                </div>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox" 
-                    name="weatherSelect" value="other">
-                  <label class="form-check-label">Other</label>
+                  <label class="form-check-label">
+                    Precipitation <span><i class="fas fa-tint"></i> <i class="fas fa-snowflake"></i> <i class="fas fa-bolt"></i></span>
+                  </label>
                 </div>
               </div>
             </div> <!-- /.row -->
           </form>
         </div> <!-- /.modal-body -->
 
+        <hr class="w-100 my-0">
+
         <!-- Modal Footer -->
-        <div class="modal-footer">
+        <div class="modal-footer border-0">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" id="addFoodBtn">Add Comfort Food</button>
         </div>

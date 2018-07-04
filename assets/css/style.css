@@ -58,3 +58,16 @@ ul#nav li {
 
 }
 
+/* CSS for Add Food Section + Modal */
+#addFoodForm label.lead {
+  color: #9a031e;
+}
+#addFoodForm span {
+  font-size: .8rem;
+  color: #33658a;
+}
+#addFoodModal hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right,rgba(220,130,57,.3), rgba(220,130,57,1), rgba(220,130,57,.3));
+}
