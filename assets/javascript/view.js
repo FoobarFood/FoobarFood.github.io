@@ -2,6 +2,8 @@ View = {};
 
 // uses the recipeId to make a getRecipeAPI call to get recipe data for display
 View.addRecipeToRecipeInfoSection = function(index, recipeId) {
+  $(`#recipeTitle${index+1}`).attr('data-recipeId', recipeId);
+
   getRecipeAPI.requestData(recipeId).then(function(response){
     var recipeData = getRecipeAPI.extractData(response);
 
