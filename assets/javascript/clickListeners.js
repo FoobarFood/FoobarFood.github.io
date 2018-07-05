@@ -79,6 +79,48 @@ clickListeners.foodBtn = function() {
   });
 }
 
-/*===== clicking on '#addFoodBtn' button
+/*===== clicking on '#addFoodBtn' button of modal
+
 
 */
+clickListeners.addFoodBtn = function() {
+  $('#addFoodBtn').on('click', function(){
+    // get user inputs 
+    var foodInput = $('#foodInput').val().trim();
+    var mealSelect = $('#mealChoice').val();
+    var tempSelect = 0;
+    var weatherSelect = 0;
+
+    $('.form-check-input[name="tempSelect"]:checked').each(function(index, el){
+      tempSelect += parseInt(el.value);
+    });
+
+    $('.form-check-input[name="weatherSelect"]:checked').each(function(index, el){
+      weatherSelect += parseInt(el.value);
+    });
+
+    // validate user inputs (food, tempSelect, weatherSelect)
+    // display error msg if invalid input
+    var validInput = true;
+
+    if(!Utility.addFood.validator.validFoodInput(foodInput)) {
+      var errorMsg = foodInput.length ? 'Invalid Food' : 'You must enter a food!';
+
+      View.renderAddFoodErrorMsg('#foodInputError', errorMsg);
+      validInput = false; 
+    }; 
+
+    if(!Utility.addFood.validator.validTempSelect(tempSelect)) {
+      View.renderAddFoodErrorMsg('#tempSelectError', 'Select option(s)');
+      validInput = false; 
+    };
+    
+    if (!Utility.addFood.validator.validWeatherSelect(weatherSelect)) {
+      View.renderAddFoodErrorMsg('#weatherSelectError', 'Select option(s)');
+      validInput = false; 
+    };
+
+    // if validInput, add to database
+
+  });
+}

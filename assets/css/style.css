@@ -71,3 +71,24 @@ ul#nav li {
   height: 1px;
   background-image: linear-gradient(to right,rgba(220,130,57,.3), rgba(220,130,57,1), rgba(220,130,57,.3));
 }
+#foodInputError,
+#tempSelectError,
+#weatherSelectError {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,0,0,.22);
+  border-radius: .25rem;
+  line-height: 100%;
+}
+#foodInputError span, 
+#tempSelectError span,
+#weatherSelectError span {
+  font-size: 1.1rem;
+  padding: .5rem;
+  background-color: rgba(255,255,255,.85);
+}

@@ -185,11 +185,16 @@
             <div class="row">
               <div class="form-group col-12">
                 <label class="lead" for="foodInput">Food</label>
-                <input type="food" class="form-control" id="foodInput" placeholder="">
+                <div class="position-relative">
+                  <input type="food" class="form-control" id="foodInput" placeholder="">
+                  <div id="foodInputError" class="justify-content-center align-items-center">
+                    <span class="text-monospace">Invalid Food</span>  
+                  </div>
+                </div>
               </div>
               <div class="form-group col-12">
-                <label class="lead" for="mealSelect">Meal</label>
-                <select class="form-control" id="mealSelect">
+                <label class="lead" for="mealChoice">Meal</label>
+                <select class="form-control" id="mealChoice">
                   <option>Everything!</option>
                   <option>Breakfast</option>
                   <option>Lunch</option>
@@ -199,52 +204,62 @@
               </div>
             </div> <!-- /.row -->
             <div class="row">
-              <div class="form-group col-6" id="tempSelect">
+              <div class="form-group col-6">
                 <label class="lead">Temperature (°F)</label>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox" 
-                    name="tempSelect" value="very hot">
-                  <label class="form-check-label">Very Hot <span>(> 90°)</span></label>
-                </div>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox" 
-                    name="tempSelect" value="hot">
-                  <label class="form-check-label">Hot <span>(76-90°)</span></label>
-                </div>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox"
-                    name="tempSelect" value="temperate">
-                  <label class="form-check-label">Temperate <span>(50-75°)</span></label>
-                </div>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox"
-                    name="tempSelect" value="cold">
-                  <label class="form-check-label">Cold <span>(< 50°)</span></label>
+                <div class="position-relative">
+                  <div class="form-check mb-1">
+                    <input class="form-check-input" type="checkbox" 
+                      name="tempSelect" value="1000">
+                    <label class="form-check-label">Very Hot <span>(> 90°)</span></label>
+                  </div>
+                  <div class="form-check mb-1">
+                    <input class="form-check-input" type="checkbox" 
+                      name="tempSelect" value="100">
+                    <label class="form-check-label">Hot <span>(75-90°)</span></label>
+                  </div>
+                  <div class="form-check mb-1">
+                    <input class="form-check-input" type="checkbox"
+                      name="tempSelect" value="10">
+                    <label class="form-check-label">Temperate <span>(50-75°)</span></label>
+                  </div>
+                  <div class="form-check mb-1">
+                    <input class="form-check-input" type="checkbox"
+                      name="tempSelect" value="1">
+                    <label class="form-check-label">Cold <span>(< 50°)</span></label>
+                  </div>
+                  <div id="tempSelectError" class="justify-content-center align-items-center">
+                    <span class="text-monospace"></span>  
+                  </div>
                 </div>
               </div>
 
-              <div class="form-group col-6" id="weatherSelect">
+              <div class="form-group col-6">
                 <label class="lead">Weather</label>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox" 
-                    name="weatherSelect" value="clear">
-                  <label class="form-check-label">
-                    Clear / Sunny <span><i class="fas fa-sun"></i></span>
-                  </label>
-                </div>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox" 
-                    name="weatherSelect" value="clouds">
-                  <label class="form-check-label">
-                    Cloudy <span><i class="fas fa-cloud"></i></span>
-                  </label>
-                </div>
-                <div class="form-check mb-1">
-                  <input class="form-check-input" type="checkbox" 
-                    name="weatherSelect" value="other">
-                  <label class="form-check-label">
-                    Precipitation <span><i class="fas fa-tint"></i> <i class="fas fa-snowflake"></i> <i class="fas fa-bolt"></i></span>
-                  </label>
+                <div class="position-relative">
+                  <div class="form-check mb-1">
+                    <input class="form-check-input" type="checkbox" 
+                      name="weatherSelect" value="200">
+                    <label class="form-check-label">
+                      Clear / Sunny <span><i class="fas fa-sun"></i></span>
+                    </label>
+                  </div>
+                  <div class="form-check mb-1">
+                    <input class="form-check-input" type="checkbox" 
+                      name="weatherSelect" value="20">
+                    <label class="form-check-label">
+                      Cloudy <span><i class="fas fa-cloud"></i></span>
+                    </label>
+                  </div>
+                  <div class="form-check mb-1">
+                    <input class="form-check-input" type="checkbox" 
+                      name="weatherSelect" value="2">
+                    <label class="form-check-label">
+                      Precipitation <span><i class="fas fa-tint"></i> <i class="fas fa-snowflake"></i> <i class="fas fa-bolt"></i></span>
+                    </label>
+                  </div>
+                  <div id="weatherSelectError" class="justify-content-center align-items-center">
+                    <span class="text-monospace"></span>  
+                  </div>
                 </div>
               </div>
             </div> <!-- /.row -->

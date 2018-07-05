@@ -33,3 +33,18 @@ View.addFoodsToSuggestionList = function(foodObj) {
 
   $('.btn-group-vertical').append($button);
 };
+
+View.renderAddFoodErrorMsg = function(errorMsgSelector, errorMsg) {
+  $(`${errorMsgSelector} span`).text(errorMsg);
+  $(errorMsgSelector).css('display', 'flex').animate({
+    opacity: 1,
+  }, 1200, function() {
+    setTimeout(function(){
+      $(errorMsgSelector).animate({
+        opacity: 0,
+      }, 1200, function(){
+        $(errorMsgSelector).css('display', 'none');
+      });
+    }, 2400);
+  });
+};

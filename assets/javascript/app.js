@@ -3,6 +3,7 @@ var App = (function(){
     FirebaseConfig.init();
     clickListeners.locator();
     clickListeners.foodBtn();
+    clickListeners.addFoodBtn();
   }
 
   return {
