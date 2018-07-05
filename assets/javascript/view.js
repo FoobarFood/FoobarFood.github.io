@@ -48,3 +48,21 @@ View.renderAddFoodErrorMsg = function(errorMsgSelector, errorMsg) {
     }, 2400);
   });
 };
+
+View.renderAddFoodMsg = function(msgType, msg) {
+  $('#addFoodMsgOverlay div').attr('class', `alert alert-${msgType}`);
+  $('#addFoodMsgOverlay div').text(msg);
+  
+  $('#addFoodMsgOverlay').css('display', 'flex').animate({
+    opacity: 1,
+  }, 1200, function() {
+    setTimeout(function(){
+      $('#addFoodMsgOverlay').animate({
+        opacity: 0,
+      }, 1200, function(){
+        $('#addFoodMsgOverlay').css('display', 'none');
+        if (msgType === 'success') $('#addFoodModal').modal('hide');
+      });
+    }, 2400);
+  });
+};

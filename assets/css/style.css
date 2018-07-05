@@ -83,12 +83,23 @@ ul#nav li {
   height: 100%;
   background-color: rgba(255,0,0,.22);
   border-radius: .25rem;
-  line-height: 100%;
+  line-height: 1;
 }
 #foodInputError span, 
 #tempSelectError span,
 #weatherSelectError span {
-  font-size: 1.1rem;
+  text-align: center;
+  font-size: .9rem;
   padding: .5rem;
   background-color: rgba(255,255,255,.85);
+}
+#addFoodMsgOverlay {
+  position: absolute;
+  display: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
 }

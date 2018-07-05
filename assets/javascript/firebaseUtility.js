@@ -17,7 +17,11 @@ foodValue is object: {
 }
 */
 firebaseUtility.addFood = function(foodKey, foodValue) {
-    firebase.database().ref('foods').child(foodKey).set(foodValue);
+    return firebase.database().ref('foods').child(foodKey).set(foodValue);
+}
+
+firebaseUtility.checkFood = function(foodKey) {
+    return firebase.database().ref('foods').child(foodKey).once('value');
 }
 
 /*===== adds a recipeId to favorites in firebase database

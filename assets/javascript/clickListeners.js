@@ -121,6 +121,26 @@ clickListeners.addFoodBtn = function() {
     };
 
     // if validInput, add to database
+    if (validInput) {
+      // convert foodInput into database friendly foodKey
+      var foodKey = Utility.addFood.convertFoodInputToKey(foodInput);
 
+      var foodValue = {
+        Meal: mealSelect,
+        TempNumber: tempSelect,
+        WeatherNumber: weatherSelect
+      };
+
+      // check that food does not already exist in database
+      firebaseUtility.checkFood(foodKey).then(function(snapshot){
+        if(snapshot.exists()) {
+          View.renderAddFoodMsg('danger', `${foodKey.replace(/_/,' ')} already exists!`);
+        } else {
+          firebaseUtility.addFood(foodKey, foodValue).then(function(){
+            View.renderAddFoodMsg('success', `${foodKey.replace(/_/,' ')} successfully added!`);
+          });   
+        };
+      });
+    };
   });
 }

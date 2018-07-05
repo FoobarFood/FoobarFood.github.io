@@ -98,7 +98,23 @@ Utility.getRandomIndices = function(arrayLength) {
 }
 
 // Utility.addFood - support for clickListener.addFoodBtn
-Utility.addFood = {};
+Utility.addFood = (function(){
+  // 'bLuEbeRRy PIE' => 'Blueberry_Pie'
+  function convertFoodInputToKey(foodInput) {
+    var foodKey;
+    
+    foodKey = foodInput.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+    foodKey = foodKey.replace(/ /, '_');
+
+    return foodKey;
+  }
+
+  return {
+    convertFoodInputToKey: convertFoodInputToKey
+  }
+})();
 
 // validates user inputs when adding food to firebase database
 Utility.addFood.validator = (function(){

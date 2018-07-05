@@ -180,7 +180,7 @@
         <hr class="w-100 my-0">
 
         <!-- Modal Body (form) -->
-        <div class="modal-body">
+        <div class="modal-body position-relative">
           <form id="addFoodForm">
             <div class="row">
               <div class="form-group col-12">
@@ -195,7 +195,6 @@
               <div class="form-group col-12">
                 <label class="lead" for="mealChoice">Meal</label>
                 <select class="form-control" id="mealChoice">
-                  <option>Everything!</option>
                   <option>Breakfast</option>
                   <option>Lunch</option>
                   <option>Dinner</option>
@@ -264,6 +263,9 @@
               </div>
             </div> <!-- /.row -->
           </form>
+          <div id="addFoodMsgOverlay" class="justify-content-center align-items-center">
+            <div class="alert" role="alert"></div>
+          </div>
         </div> <!-- /.modal-body -->
 
         <hr class="w-100 my-0">
