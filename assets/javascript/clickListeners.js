@@ -16,6 +16,7 @@ clickListeners.locator = function() {
           var weatherDetails = weatherAPI.getWeatherDetails(response);
 
           $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature}°F with ${weatherDetails.description}. The perfect day for...`)
+       
 
           var tempDesc = Utility.convertTemptoDescription(weatherDetails.temperature);
           var weatherCat = Utility.convertWeathertoCategory(weatherDetails.description);
@@ -50,7 +51,8 @@ clickListeners.locator = function() {
               View.addFoodsToSuggestionList(filteredMeals[randomIndices[i]]);
             };
               
-            //shows Main Body Div
+            //shows Main Body Div and removes spash div
+            $("#splashBody").css("display", "none");
             $("#mainBody").removeAttr("style");
           });
       });
@@ -73,10 +75,16 @@ clickListeners.foodBtn = function() {
         var recipeId = data[i].id;
 
         View.addRecipeToRecipeInfoSection(i, recipeId);
+        
+        $("#recipeSplash").hide();
+        $("#recipe").show();
+        
       };
+      
     });
-
+    
   });
+
 }
 
 /*===== clicking on '#addFoodBtn' button of modal
