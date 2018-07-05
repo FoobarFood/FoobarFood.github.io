@@ -242,3 +242,8 @@ var FOODS = {
         Meal: "Breakfast"
       },
 };
+
+// used in firebaseConfig.seedFavorites()
+var FAVORITE_RECIPES = {
+    
+};
