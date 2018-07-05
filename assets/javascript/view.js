@@ -68,3 +68,30 @@ View.renderAddFoodMsg = function(msgType, msg) {
     }, 2400);
   });
 };
+
+View.createRecipeCard = function(index) {
+  var $recipeCard = $('<div>', {
+    class: 'content',
+    html: `
+      <div class="card">
+        <img class="card-img-top" id="recipeImg${index+1}" src="" alt="recipe img">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            <span id="recipeTitle1"></span>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted text-center">
+            <span id="recipeTime${index+1}"></span>
+          </h6>
+          <p class="card-text">
+            <ul id="recipeIngredients${index+1}"></ul>
+          </p>
+          <a href="#" class="btn btn-primary" id="recipeBtn1" target="_blank">Get the Recipe!</a>
+          <p>
+            Source: <a href="#" id="recipeSource${index+1}" target="_blank"></a>
+          </p>
+        </div>
+      </div>
+    `
+  });
+  $('#recipeDetailsSection').append($recipeCard);
+}

@@ -5,7 +5,7 @@ firebaseUtility.getFoods = function() {
 }
 
 firebaseUtility.getFavorites = function(limit) {
-    return firebase.database().ref('favorites').once('value');
+    return firebase.database().ref('favorites').orderByValue().limitToLast(limit).once('value');
 }
 
 /*===== adds a food to foods in firebase database

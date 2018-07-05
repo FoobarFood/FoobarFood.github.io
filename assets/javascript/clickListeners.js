@@ -79,9 +79,8 @@ clickListeners.foodBtn = function() {
   });
 }
 
-/*===== clicking on '#addFoodBtn' button of modal
-
-
+/*===== clicking on '#addFoodBtn' button inside of modal
+validates user inputs, displays error msgs, checks if food already in db, writes to db
 */
 clickListeners.addFoodBtn = function() {
   $('#addFoodBtn').on('click', function(){
@@ -142,5 +141,32 @@ clickListeners.addFoodBtn = function() {
         };
       });
     };
+  });
+}
+
+/*===== clicking on '#popularRecipesBtn' button
+
+*/
+clickListeners.popularRecipesBtn = function() {
+  $('#popularRecipesBtn').on('click', function(){
+    firebaseUtility.getFavorites(8).then(function(snapshot){
+      $('#recipeDetailsSection').empty();
+
+      var popularRecipes = [];
+
+      snapshot.forEach(function (childSnapshot) {
+        popularRecipes.unshift({
+          recipeId: childSnapshot.key,
+          favoritesCount: childSnapshot.val()
+        });
+      });
+
+      for (var i = 0; i < popularRecipes.length; i++) {
+        View.createRecipeCard(i); 
+        //View.addRecipeToRecipeInfoSection(i, popularRecipes[i].recipeId);
+      };
+
+      // regenerate pagination functionality
+    });
   });
 }
