@@ -93,30 +93,55 @@ View.createRecipeCard = function(index) {
       </div>
     `
   });
-  $('#recipeDetailsSection').append($recipeCard);
+  $('#recipe-details').append($recipeCard);
 }
 
 View.removeRecipesPagination = function() {
-  $('#recipeDetailsSection article').remove();
+  $('#recipesPagination').empty();
 }
 
 View.createRecipesPagination = function(length){
-  var $paginationElement = $('<article>', {
-    id: 'pagin',
+  var $paginationNav = $('<nav>', {
+    'aria-label': 'Recipe navigation',
     html: `
-      <nav aria-label="Page navigation example">
-        <ul id="nav"></ul>
-      </nav>
+      <ul class="pagination"></ul>
     `
   });
 
-  $('#recipeDetailsSection').append($paginationElement);
+  $('#recipesPagination').append($paginationNav);
 
+  // 1 ... n
   for (var i = 0; i < length; i++) {
     var $li = $('<li>', {
-      class: 'active',
-      html: `<a href='#'>${i+1}</a>`
+      class: 'page-item',
+      html: `<a class="page-link" href="#recipe-details">${i+1}</a>`
     });
-    $('#nav').append($li);
+    $('#recipesPagination nav ul').append($li);
   };
+
+  // «
+  var $laquoLi = $('<li>', {
+    class: 'page-item', 
+    html: `
+      <a class="page-link" href="#recipe-details" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    `
+  });
+
+  $('#recipesPagination nav ul').prepend($laquoLi);
+
+  // »
+  var $raquoLi = $('<li>', {
+    class: 'page-item', 
+    html: `
+      <a class="page-link" href="#recipe-details" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    `
+  });
+
+  $('#recipesPagination nav ul').append($raquoLi);
 }

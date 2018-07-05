@@ -9,31 +9,34 @@ var App = (function(){
   }
 
   function setupPagination() {
-    var nombrePage = $(".content").length;
+    var nombrePage = $('.content').length;
 
-    showPage = function(pagination) {
-      if (pagination < 0 || pagination >= nombrePage) return;
-    
-      $(".content").hide().eq(pagination).show();
-      $("#pagin li").removeClass("active").eq(pagination).addClass("active");
+    function showPage(pagination) {
+      var currPage = $('.page-item.active').index();
+
+      if (pagination === 0) { // «
+        if (currPage > 1) {
+          $('.content').hide().eq(currPage - 2).show();
+          $('.page-item').removeClass("active").eq(currPage - 1).addClass('active');
+        };
+      } else if (pagination > 0 && pagination <= nombrePage) {
+        $('.content').hide().eq(pagination - 1).show();
+        $('.page-item').removeClass("active").eq(pagination).addClass('active');
+      } else { // »
+        if (currPage < nombrePage) {
+          $('.content').hide().eq(currPage).show();
+          $('.page-item').removeClass("active").eq(currPage + 1).addClass('active');
+        };
+      };
     }
-    
-    // // Go to Left
-    // $(".prev").click(function() {
-    //   showPage($("#pagin ul .active").index() - 1);
-    // });
-    
-    // // Go to Right
-    // $(".next").click(function() {
-    //   showPage($("#pagin ul .active").index() + 1);
-    // });
-    
-    $("#pagin ul a").click(function(e) {
+
+    // 0 « | 1 2 ... n | n » 
+    $('.page-item').click(function(e) {
       e.preventDefault();
-      showPage($(this).parent().index());
+      showPage($(this).index());
     });
     
-    showPage(0);
+    showPage(1);
   }
 
   return {

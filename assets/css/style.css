@@ -58,6 +58,13 @@ ul#nav li {
 
 }
 
+/* Other CSS */
+.left-col-hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right,rgba(220,130,57,.3), rgba(220,130,57,1), rgba(220,130,57,.3));
+}
+
 /* CSS for Add Food Modal */
 #addFoodForm label.lead {
   color: #9a031e;
