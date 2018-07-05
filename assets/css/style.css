@@ -58,7 +58,7 @@ ul#nav li {
 
 }
 
-/* CSS for Add Food Section + Modal */
+/* CSS for Add Food Modal */
 #addFoodForm label.lead {
   color: #9a031e;
 }
@@ -102,4 +102,21 @@ ul#nav li {
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,.4);
+}
+
+/* CSS for Add Food Modal Trigger, Popular Recipes Btns */
+#addFoodModalTriggerBtn {
+  font-size: .9rem;
+}
+#popularRecipesBtn {
+  font-size: .9rem;
+  background-color: #fae9b3;
+}
+#popularRecipesBtn span {
+  font-size: .8rem;
+}
+#popularRecipesBtn:hover {
+  background-color: #dc8239;
+  border-color:#dc8239;
+  color: white;
 }
