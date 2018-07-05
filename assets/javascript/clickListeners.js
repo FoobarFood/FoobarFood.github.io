@@ -150,8 +150,6 @@ clickListeners.addFoodBtn = function() {
 clickListeners.popularRecipesBtn = function() {
   $('#popularRecipesBtn').on('click', function(){
     firebaseUtility.getFavorites(8).then(function(snapshot){
-      $('#recipeDetailsSection').empty();
-
       var popularRecipes = [];
 
       snapshot.forEach(function (childSnapshot) {
@@ -161,12 +159,17 @@ clickListeners.popularRecipesBtn = function() {
         });
       });
 
+      // creates 'Recipe Cards' for i > 2 (cards already exists for 0-2 in html)
       for (var i = 0; i < popularRecipes.length; i++) {
-        View.createRecipeCard(i); 
-        //View.addRecipeToRecipeInfoSection(i, popularRecipes[i].recipeId);
+        if (i > 2) View.createRecipeCard(i); 
+        View.addRecipeToRecipeInfoSection(i, popularRecipes[i].recipeId);
       };
 
-      // regenerate pagination functionality
+      // remove, then regenerate pagination functionality
+
+      View.removeRecipesPagination();
+      View.createRecipesPagination(popularRecipes.length);
+      App.setupPagination();
     });
   });
 }

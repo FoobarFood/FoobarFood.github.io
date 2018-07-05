@@ -37,7 +37,8 @@ var App = (function(){
   }
 
   return {
-    init: init
+    init: init,
+    setupPagination: setupPagination
   }
 })();
 

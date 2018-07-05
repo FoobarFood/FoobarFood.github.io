@@ -77,7 +77,7 @@ View.createRecipeCard = function(index) {
         <img class="card-img-top" id="recipeImg${index+1}" src="" alt="recipe img">
         <div class="card-body">
           <h5 class="card-title text-center">
-            <span id="recipeTitle1"></span>
+            <span id="recipeTitle${index+1}"></span>
           </h5>
           <h6 class="card-subtitle mb-2 text-muted text-center">
             <span id="recipeTime${index+1}"></span>
@@ -85,7 +85,7 @@ View.createRecipeCard = function(index) {
           <p class="card-text">
             <ul id="recipeIngredients${index+1}"></ul>
           </p>
-          <a href="#" class="btn btn-primary" id="recipeBtn1" target="_blank">Get the Recipe!</a>
+          <a href="#" class="btn btn-primary" id="recipeBtn${index+1}" target="_blank">Get the Recipe!</a>
           <p>
             Source: <a href="#" id="recipeSource${index+1}" target="_blank"></a>
           </p>
@@ -94,4 +94,29 @@ View.createRecipeCard = function(index) {
     `
   });
   $('#recipeDetailsSection').append($recipeCard);
+}
+
+View.removeRecipesPagination = function() {
+  $('#recipeDetailsSection article').remove();
+}
+
+View.createRecipesPagination = function(length){
+  var $paginationElement = $('<article>', {
+    id: 'pagin',
+    html: `
+      <nav aria-label="Page navigation example">
+        <ul id="nav"></ul>
+      </nav>
+    `
+  });
+
+  $('#recipeDetailsSection').append($paginationElement);
+
+  for (var i = 0; i < length; i++) {
+    var $li = $('<li>', {
+      class: 'active',
+      html: `<a href='#'>${i+1}</a>`
+    });
+    $('#nav').append($li);
+  };
 }
