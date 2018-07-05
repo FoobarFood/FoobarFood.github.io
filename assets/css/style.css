@@ -11,15 +11,39 @@ body {
   margin-bottom: 3.5rem;
 }
 h1 {
-  color: #df744a;
+  color: whitesmoke;
+  font-family: 'Bungee Inline', cursive;
+}
+
+h2 {
+  font-family: 'Playball', cursive;
+  color: #874c62;
 }
 
 ul#nav li {
   display: inline;
 }
 
+li {
+  font-size: 15px;
+}
+#recipeSplash{
+  display: inline-block;
+}
+#recipe{
+  display: none;
+}
+
 .jumbotron {
-  background-color: #bfd8d2;
+  background-color: #a7d2cb;
+  margin-bottom: auto;
+  padding: 40px;
+}
+.iconJumbo {
+  width: 45px;
+}
+.card-image-top {
+  width: 100px;
 }
 .btn {
   background-color: whitesmoke;
@@ -27,16 +51,37 @@ ul#nav li {
   border-color: whitesmoke;
 }
 .btn:hover {
-  background-color: #dc8239;
-  border-color:#dc8239;
+  background-color: #c98474;
+  border-color:#c98474;
 }
 .foodBtn {
   margin-bottom: 15px;
-  background-color: #dcb239;
-  border-radius: 20px;
+  padding: 20px;
+  background-color: #f2d388;
+  border-radius: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+
+}
+.foodBtn:focus {
+  background-color: #874c62;
+  box-shadow: white;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+}
+.modalBtn {
+  padding: 15px;
 }
 
-
+.modalBtn, #recipeBtn1,  #recipeBtn2,  #recipeBtn3 {
+background-color: #874c62;
+color: white;
+}
+.modalBtn:hover , #recipeBtn1:hover ,  #recipeBtn2:hover ,  #recipeBtn3:hover  {
+background-color:#c98474 ;
+}
 
 
 
@@ -46,17 +91,36 @@ ul#nav li {
   width: 100%;
   height: 2.5rem;
   line-height: 2.5rem;
+  background-color: #c98474; 
 }
 
 .popInDiv {
-  padding: 20px;
-  background-color: #fedcd2;
-  color: #dc8239;
+  padding: 15px;
+  font-family: 'Playball', cursive;
   font-size: 20px;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.card-text {
+  font-size: 15px;
+}
+.recipeSourceP{
+  float: right;
+}
+
+.page-link{
+  color: black;
+  border-color: #874c62;
+}
+.page-item.active .page-link{
+  background-color: #874c62;
+  color: whitesmoke;
+  border-color: #874c62;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 
 }
+
 
 /* CSS for Add Food Section + Modal */
 #addFoodForm label.lead {

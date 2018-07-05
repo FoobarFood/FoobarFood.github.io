@@ -1,319 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+<link rel="stylesheet" href="./assets/css/reset.css">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
 
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!-- Font Awesome and Google Fonts CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Playball|Roboto" rel="stylesheet">
+
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Foobar Foods</title>
+  <link rel="icon" href="./assets/images/iconsmall.png">
+
+  <title>Forkcast</title>
 </head>
 
 <body>
   <!-- Jumbotron Section-->
 
- 
+
   <div class="jumbotron">
     <div class="row">
       <div class="col-lg-12 col-md-6">
-        <h1 class="text-center">Foobar Foods Placeholder</h1>
-        <form>
+        <h1 class="text-center"><img class="iconJumbo" src="./assets/images/iconsmall.png" alt="icon">FORKCAST</h1>
+         <form>
           <div class="form-row justify-content-center">
             <div class="col-auto">
               <input type="text" class="form-control" id="location-input" placeholder="City, State or Zip Code">
             </div>
             <div class="row">
               <div class="col">
-            <div class="form-group col-auto">
-              <select class="form-control" id="mealSelect">
-                <option>Everything!</option>
-                <option>Breakfast</option>
-                <option>Lunch</option>
-                <option>Dinner</option>
-                <option>Snack</option>
-              </select>
+                <div class="form-group col-auto">
+                  <select class="form-control" id="mealSelect">
+                    <option>Everything!</option>
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Snack</option>
+                  </select>
+                </div>
+              </div>
             </div>
-          </div>
-          </div>
-          <div class="row">
-            <div class="col-auto">
-              <button type="submit" class="btn btn-light mb-2" id="location-submit">Submit</button>
+            <div class="row">
+              <div class="col-auto">
+                <button type="submit" class="btn btn-light mb-2" id="location-submit">Submit</button>
+              </div>
             </div>
-          </div>
           </div>
         </form>
       </div>
-    </div> <!-- /.row -->
+    </div>
+    <!-- /.row -->
   </div>
-  <!-- style="display: none" -->
-  <div class="container" id="mainBody">
   <!-- Weather Info Section -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-md-6">
-        <p class="text-center popInDiv"><span id="fooString">Today in TOWN it is currently TEMP degrees with WEATHER skies, the perfect day for...</span></p>
+  <div class="container-fluid popInDivCon">
+    <p class="text-center popInDiv">
+      <span id="fooString">Enter your location and meal choice!</span>
+    </p>
+  </div>
+
+  <div class="container-fluid" id="splashBody" style="display: inline-block">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="./assets/images/french_toast.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/grilledCheese.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/macNCheese.jpg" alt="Fourth slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/nachos.jpg" alt="Fifth slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/pbj.jpg" alt="Sixth slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/pizza.jpg" alt="Seventh slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/blueberryPie.jpg" alt="Eighth slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/donuts.jpg" alt="Ninth slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./assets/images/fried_chicken.jpg" alt="Tenth slide">
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Main Section -->
-  <div class="container">
-    <div class="row">
-      <!-- left side column / Recipe Suggestions Section -->
-      <div class="col-lg-6 col-md-3" id="recipeSuggestions">
-        <div class="btn-group-vertical btn-block"></div>
-      </div>
-
-      <!-- right side column / Recipe Info/Details Section -->
-      <div class="col-lg-6 col-md-3" id="recipe">
-        <section class="body">
-          <div class="content">
-            <div class="card">
-              <img class="card-img-top" id="recipeImg1" src="http://via.placeholder.com/450x236" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-center">
-                  <span id="recipeTitle1"></span>
-                </h5>
-                <h6 class="card-subtitle mb-2 text-muted text-center">
-                  <span id="recipeTime1"></span>
-                </h6>
-                <p class="card-text">
-                  <ul id="recipeIngredients1"></ul>
-                </p>
-                <a href="#" class="btn btn-primary" id="recipeBtn1" target="_blank">Get the Recipe!</a>
-                <p>
-                  Source: <a href="#" id="recipeSource1" target="_blank"></a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="content">
-            <div class="card">
-              <img class="card-img-top" id="recipeImg2" src="http://via.placeholder.com/450x236" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-center">
-                  <span id="recipeTitle2"></span>
-                </h5>
-                <h6 class="card-subtitle mb-2 text-muted text-center">
-                  <span id="recipeTime2"></span>
-                </h6>
-                <p class="card-text">
-                  <ul id="recipeIngredients2"></ul>
-                </p>
-                <a href="#" class="btn btn-primary" id="recipeBtn2" target="_blank">Get the Recipe!</a>
-                <p>
-                  Source: <a href="#" id="recipeSource2" target="_blank"></a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="content">
-            <div class="card">
-              <img class="card-img-top" id="recipeImg3" src="http://via.placeholder.com/450x236" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title text-center">
-                  <span id="recipeTitle3"></span>
-                </h5>
-                <h6 class="card-subtitle mb-2 text-muted text-center">
-                  <span id="recipeTime3"></span>
-                </h6>
-                <p class="card-text">
-                  <ul id="recipeIngredients3"></ul>
-                </p>
-                <a href="#" class="btn btn-primary" id="recipeBtn3" target="_blank">Get the Recipe!</a>
-                <p>
-                  Source: <a href="#" id="recipeSource3" target="_blank"></a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <article id="pagin">
-            <nav aria-label="Page navigation example">
-
-              <ul id="nav">
-                <li class="active">
-                  <a href="#">1</a>
-                </li>
-                <li>
-                  <a href="#">2</a>
-                </li>
-                <li>
-                  <a href="#">3</a>
-                </li>
-              </ul>
-            </nav>
-          </article>
-        </section>
-      </div>
-    </div> <!-- /.row -->
-  </div>
-
-  <!-- Add Food Section + Modal -->
-  <div class="container">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addFoodModal">
-      Add Your Own Comfort Food
-    </button>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog" aria-labelledby="addFoodModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-
-        <!-- Modal Header-->
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="addFoodModalTitle">I Need...</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <hr class="w-100 my-0">
-
-        <!-- Modal Body (form) -->
-        <div class="modal-body position-relative">
-          <form id="addFoodForm">
-            <div class="row">
-              <div class="form-group col-12">
-                <label class="lead" for="foodInput">Food</label>
-                <div class="position-relative">
-                  <input type="food" class="form-control" id="foodInput" placeholder="">
-                  <div id="foodInputError" class="justify-content-center align-items-center">
-                    <span class="text-monospace">Invalid Food</span>  
-                  </div>
-                </div>
-              </div>
-              <div class="form-group col-12">
-                <label class="lead" for="mealChoice">Meal</label>
-                <select class="form-control" id="mealChoice">
-                  <option>Breakfast</option>
-                  <option>Lunch</option>
-                  <option>Dinner</option>
-                  <option>Snack</option>
-                </select>
-              </div>
-            </div> <!-- /.row -->
-            <div class="row">
-              <div class="form-group col-6">
-                <label class="lead">Temperature (°F)</label>
-                <div class="position-relative">
-                  <div class="form-check mb-1">
-                    <input class="form-check-input" type="checkbox" 
-                      name="tempSelect" value="1000">
-                    <label class="form-check-label">Very Hot <span>(> 90°)</span></label>
-                  </div>
-                  <div class="form-check mb-1">
-                    <input class="form-check-input" type="checkbox" 
-                      name="tempSelect" value="100">
-                    <label class="form-check-label">Hot <span>(75-90°)</span></label>
-                  </div>
-                  <div class="form-check mb-1">
-                    <input class="form-check-input" type="checkbox"
-                      name="tempSelect" value="10">
-                    <label class="form-check-label">Temperate <span>(50-75°)</span></label>
-                  </div>
-                  <div class="form-check mb-1">
-                    <input class="form-check-input" type="checkbox"
-                      name="tempSelect" value="1">
-                    <label class="form-check-label">Cold <span>(< 50°)</span></label>
-                  </div>
-                  <div id="tempSelectError" class="justify-content-center align-items-center">
-                    <span class="text-monospace"></span>  
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group col-6">
-                <label class="lead">Weather</label>
-                <div class="position-relative">
-                  <div class="form-check mb-1">
-                    <input class="form-check-input" type="checkbox" 
-                      name="weatherSelect" value="200">
-                    <label class="form-check-label">
-                      Clear / Sunny <span><i class="fas fa-sun"></i></span>
-                    </label>
-                  </div>
-                  <div class="form-check mb-1">
-                    <input class="form-check-input" type="checkbox" 
-                      name="weatherSelect" value="20">
-                    <label class="form-check-label">
-                      Cloudy <span><i class="fas fa-cloud"></i></span>
-                    </label>
-                  </div>
-                  <div class="form-check mb-1">
-                    <input class="form-check-input" type="checkbox" 
-                      name="weatherSelect" value="2">
-                    <label class="form-check-label">
-                      Precipitation <span><i class="fas fa-tint"></i> <i class="fas fa-snowflake"></i> <i class="fas fa-bolt"></i></span>
-                    </label>
-                  </div>
-                  <div id="weatherSelectError" class="justify-content-center align-items-center">
-                    <span class="text-monospace"></span>  
-                  </div>
-                </div>
-              </div>
-            </div> <!-- /.row -->
-          </form>
-          <div id="addFoodMsgOverlay" class="justify-content-center align-items-center">
-            <div class="alert" role="alert"></div>
-          </div>
-        </div> <!-- /.modal-body -->
-
-        <hr class="w-100 my-0">
-
-        <!-- Modal Footer -->
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="addFoodBtn">Add Comfort Food</button>
-        </div>
-      </div> <!-- /.modal-content -->
-    </div> <!-- /.modal-dialog -->
-  </div> <!-- /.modal -->
-
-  <!-- Footer -->
-  <footer class="sticky-footer bg-primary border-top border-info">
+  <div class="container" id="mainBody" style="display: none;">
+    <!-- Main Section -->
     <div class="container">
-      &copy; 2018
+      <div class="row">
+        <!-- left side column / Recipe Suggestions Section -->
+        <div class="col-lg-6 col-md-3" id="recipeSuggestions">
+          <div class="btn-group-vertical btn-block"></div>
+         <!-- Add Food Section + Modal -->
+    <div class="container content text-center">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary modalBtn" data-toggle="modal" data-target="#addFoodModal">
+          Add Your Own Comfort Food
+        </button>
+      </div>
+        </div>
+
+        <!-- right side column / Recipe Info/Details Section -->
+        <div class="col-lg-6 col-md-3 text-center" id="recipeSplash" style="display: inline-block">
+          <br>
+          <br>
+          <h2>- Sweet -</h2>
+          <br>
+          <h2>- Sour -</h2>
+          <br>
+          <h2>- Salty -</h2>
+          <br>
+          <h2>- Bitter -</h2>
+          <br>
+          <h2>- Savory -</h2>
+           
+        </div>
+        <div class="col-lg-6 col-md-3" id="recipe">
+          <section class="body">
+            <div class="content">
+              <div class="card">
+                <img class="card-img-top" id="recipeImg1" src="" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title text-center">
+                    <span id="recipeTitle1"></span>
+                  </h5>
+                  <h6 class="card-subtitle mb-2 text-muted text-center">
+                    <span id="recipeTime1"></span>
+                  </h6>
+                  <p class="card-text">
+                    <ul id="recipeIngredients1"></ul>
+                  </p>
+                  <a href="#" class="btn btn-primary" id="recipeBtn1" target="_blank">Get the Recipe!</a>
+                  <p class="recipeSourceP">
+                    Source:
+                    <a href="#" id="recipeSource1" target="_blank"></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <div class="card">
+                <img class="card-img-top" id="recipeImg2" src="" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title text-center">
+                    <span id="recipeTitle2"></span>
+                  </h5>
+                  <h6 class="card-subtitle mb-2 text-muted text-center">
+                    <span id="recipeTime2"></span>
+                  </h6>
+                  <p class="card-text">
+                    <ul id="recipeIngredients2"></ul>
+                  </p>
+                  <a href="#" class="btn btn-primary" id="recipeBtn2" target="_blank">Get the Recipe!</a>
+                  <p class="recipeSourceP">
+                    Source:
+                    <a href="#" id="recipeSource2" target="_blank"></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="content">
+              <div class="card">
+                <img class="card-img-top" id="recipeImg3" src="" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title text-center">
+                    <span id="recipeTitle3"></span>
+                  </h5>
+                  <h6 class="card-subtitle mb-2 text-muted text-center">
+                    <span id="recipeTime3"></span>
+                  </h6>
+                  <p class="card-text">
+                    <ul id="recipeIngredients3"></ul>
+                  </p>
+                  <a href="#" class="btn btn-primary" id="recipeBtn3" target="_blank">Get the Recipe!</a>
+                  <p class="recipeSourceP">
+                    Source:
+                    <a href="#" id="recipeSource3" target="_blank"></a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <article id="pagin">
+              <nav aria-label="Page navigation example">
+                <ul id="nav" class="pagination pagination-lg justify-content-center">
+                  <li class="page-item">
+                      <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                </ul>
+              </nav>
+            </article>
+          </section>
+        </div>
+      </div>
+      <!-- /.row -->
     </div>
-  </footer>
 
-  <!-- jQuery, Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
 
-  <!-- Moment.js -->
-  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <!-- Modal -->
+    <div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog" aria-labelledby="addFoodModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-  <script src="assets/javascript/firebaseConfig.js"></script>
-  <script src="assets/javascript/firebaseFoods.js"></script>
-  <script src="assets/javascript/firebaseUtility.js"></script>
-  
-  <!-- APIs -->
-  <script src="assets/javascript/bingAPI.js"></script>
-  <script src="assets/javascript/weatherAPI.js"></script>
-  <script src="assets/javascript/yummlyAPI.js"></script>
+          <!-- Modal Header-->
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="addFoodModalTitle">I Need...</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
-  <!-- Other App Supporting Files -->
-  <script src="assets/javascript/clickListeners.js"></script>
-  <script src="assets/javascript/view.js"></script>
-  <script src="assets/javascript/utility.js"></script>
+          <hr class="w-100 my-0">
 
-  <!-- App -->
-  
-  <script src="assets/javascript/app.js"></script>
-  <script src="assets/javascript/jsJim.js"></script>
+          <!-- Modal Body (form) -->
+          <div class="modal-body position-relative">
+            <form id="addFoodForm">
+              <div class="row">
+                <div class="form-group col-12">
+                  <label class="lead" for="foodInput">Food</label>
+                  <div class="position-relative">
+                    <input type="food" class="form-control" id="foodInput" placeholder="">
+                    <div id="foodInputError" class="justify-content-center align-items-center">
+                      <span class="text-monospace">Invalid Food</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-12">
+                  <label class="lead" for="mealChoice">Meal</label>
+                  <select class="form-control" id="mealChoice">
+                    <option>Breakfast</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Snack</option>
+                  </select>
+                </div>
+              </div>
+              <!-- /.row -->
+              <div class="row">
+                <div class="form-group col-6">
+                  <label class="lead">Temperature (°F)</label>
+                  <div class="position-relative">
+                    <div class="form-check mb-1">
+                      <input class="form-check-input" type="checkbox" name="tempSelect" value="1000">
+                      <label class="form-check-label">Very Hot
+                        <span>(> 90°)</span>
+                      </label>
+                    </div>
+                    <div class="form-check mb-1">
+                      <input class="form-check-input" type="checkbox" name="tempSelect" value="100">
+                      <label class="form-check-label">Hot
+                        <span>(75-90°)</span>
+                      </label>
+                    </div>
+                    <div class="form-check mb-1">
+                      <input class="form-check-input" type="checkbox" name="tempSelect" value="10">
+                      <label class="form-check-label">Temperate
+                        <span>(50-75°)</span>
+                      </label>
+                    </div>
+                    <div class="form-check mb-1">
+                      <input class="form-check-input" type="checkbox" name="tempSelect" value="1">
+                      <label class="form-check-label">Cold
+                        <span>(
+                          < 50°)</span>
+                      </label>
+                    </div>
+                    <div id="tempSelectError" class="justify-content-center align-items-center">
+                      <span class="text-monospace"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group col-6">
+                  <label class="lead">Weather</label>
+                  <div class="position-relative">
+                    <div class="form-check mb-1">
+                      <input class="form-check-input" type="checkbox" name="weatherSelect" value="200">
+                      <label class="form-check-label">
+                        Clear / Sunny
+                        <span>
+                          <i class="fas fa-sun"></i>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check mb-1">
+                      <input class="form-check-input" type="checkbox" name="weatherSelect" value="20">
+                      <label class="form-check-label">
+                        Cloudy
+                        <span>
+                          <i class="fas fa-cloud"></i>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-check mb-1">
+                      <input class="form-check-input" type="checkbox" name="weatherSelect" value="2">
+                      <label class="form-check-label">
+                        Precipitation
+                        <span>
+                          <i class="fas fa-tint"></i>
+                          <i class="fas fa-snowflake"></i>
+                          <i class="fas fa-bolt"></i>
+                        </span>
+                      </label>
+                    </div>
+                    <div id="weatherSelectError" class="justify-content-center align-items-center">
+                      <span class="text-monospace"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.row -->
+            </form>
+            <div id="addFoodMsgOverlay" class="justify-content-center align-items-center">
+              <div class="alert" role="alert"></div>
+            </div>
+          </div>
+          <!-- /.modal-body -->
+
+          <hr class="w-100 my-0">
+
+          <!-- Modal Footer -->
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="addFoodBtn">Add Comfort Food</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    </div>
+    <!-- Footer -->
+    <footer class="sticky-footer border-top text-center">
+        &copy; 2018
+      </footer>
+
+
+    <!-- jQuery, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="assets/javascript/firebaseConfig.js"></script>
+    <script src="assets/javascript/firebaseFoods.js"></script>
+    <script src="assets/javascript/firebaseUtility.js"></script>
+
+    <!-- APIs -->
+    <script src="assets/javascript/bingAPI.js"></script>
+    <script src="assets/javascript/weatherAPI.js"></script>
+    <script src="assets/javascript/yummlyAPI.js"></script>
+
+    <!-- Other App Supporting Files -->
+    <script src="assets/javascript/clickListeners.js"></script>
+    <script src="assets/javascript/view.js"></script>
+    <script src="assets/javascript/utility.js"></script>
+
+    <!-- App -->
+
+    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/jsJim.js"></script>
 </body>
 
 </html>
