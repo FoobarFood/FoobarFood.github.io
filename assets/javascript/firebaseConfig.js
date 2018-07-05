@@ -15,13 +15,8 @@ var FirebaseConfig = (function() {
     firebase.database().ref('foods').set(FOODS);
   }
 
-  function resetFoods() {
-    firebase.database().ref('foods').set('');
-  }
-
   return {
     init: init,
-    seed: seed,
-    resetFoods: resetFoods
+    seed: seed
   }
 })();

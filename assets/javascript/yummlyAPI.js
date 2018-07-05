@@ -82,6 +82,7 @@ var getRecipeAPI = (function(){
         displayName: response.source.sourceDisplayName,
         recipeUrl: response.source.sourceRecipeUrl
       },
+      name: response.name,
       flavors: response.flavors,
       imageUrl: response.images[0].hostedLargeUrl,
       ingredientLines: response.ingredientLines,
