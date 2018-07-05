@@ -106,7 +106,7 @@ Utility.addFood = (function(){
     foodKey = foodInput.replace(/\w\S*/g, function(txt){
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
-    foodKey = foodKey.replace(/ /, '_');
+    foodKey = foodKey.replace(/ /g, '_');
 
     return foodKey;
   }

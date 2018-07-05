@@ -134,10 +134,10 @@ clickListeners.addFoodBtn = function() {
       // check that food does not already exist in database
       firebaseUtility.checkFood(foodKey).then(function(snapshot){
         if(snapshot.exists()) {
-          View.renderAddFoodMsg('danger', `${foodKey.replace(/_/,' ')} already exists!`);
+          View.renderAddFoodMsg('danger', `${foodKey.replace(/_/g,' ')} already exists!`);
         } else {
           firebaseUtility.addFood(foodKey, foodValue).then(function(){
-            View.renderAddFoodMsg('success', `${foodKey.replace(/_/,' ')} successfully added!`);
+            View.renderAddFoodMsg('success', `${foodKey.replace(/_/g,' ')} successfully added!`);
           });   
         };
       });
