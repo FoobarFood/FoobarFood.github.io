@@ -4,7 +4,11 @@ firebaseUtility.getFoods = function() {
     return firebase.database().ref('foods').once('value');
 }
 
-firebaseUtility.getFavorites = function(limit) {
+firebaseUtility.getFavoriteCount = function(key) {
+    return firebase.database().ref('favorites').child(key).once('value');
+}
+
+firebaseUtility.getTopFavorites = function(limit) {
     return firebase.database().ref('favorites').orderByValue().limitToLast(limit).once('value');
 }
 

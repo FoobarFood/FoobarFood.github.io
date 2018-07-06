@@ -163,7 +163,7 @@ clickListeners.addFoodBtn = function() {
 /*===== clicking on '#popularRecipesBtn' button */
 clickListeners.popularRecipesBtn = function() {
   $('#popularRecipesBtn').on('click', function(){
-    firebaseUtility.getFavorites(8).then(function(snapshot){
+    firebaseUtility.getTopFavorites(8).then(function(snapshot){
       var popularRecipes = [];
 
       snapshot.forEach(function (childSnapshot) {
@@ -176,7 +176,7 @@ clickListeners.popularRecipesBtn = function() {
       // creates 'Recipe Cards' for i > 2 (cards already exists for 0-2 in html)
       for (var i = 0; i < popularRecipes.length; i++) {
         if (i > 2) View.createRecipeCard(i); 
-        View.addRecipeToRecipeInfoSection(i, popularRecipes[i].recipeId);
+        View.addRecipeToRecipeInfoSection(i, popularRecipes[i].recipeId, popularRecipes[i].favoritesCount);
       };
 
       // remove, then regenerate pagination functionality

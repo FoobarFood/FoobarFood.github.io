@@ -1,8 +1,20 @@
 View = {};
 
 // uses the recipeId to make a getRecipeAPI call to get recipe data for display
-View.addRecipeToRecipeInfoSection = function(index, recipeId) {
+View.addRecipeToRecipeInfoSection = function(index, recipeId, favoriteCount) {
   $(`#recipeTitle${index+1}`).attr('data-recipeId', recipeId);
+
+  if (favoriteCount) {
+    $(`#recipeFavoriteCount${index+1}`).text(favoriteCount);
+  } else {
+    firebaseUtility.getFavoriteCount(recipeId).then(function(snapshot){
+      if(snapshot.exists()) {
+        $(`#recipeFavoriteCount${index+1}`).text(snapshot.val());
+      } else {
+        $(`#recipeFavoriteCount${index+1}`).text(0);
+      };
+    });
+  };
 
   getRecipeAPI.requestData(recipeId).then(function(response){
     var recipeData = getRecipeAPI.extractData(response);
@@ -97,7 +109,8 @@ View.createRecipeCard = function(index) {
               </small>
             </div>
             <div class="d-flex align-items-center ml-auto">
-              <small><i class="fas fa-star mx-2"></i></small> <span id="recipeFavoriteCount${index+1}"></span>
+              <small class="mr-1"><i class="fas fa-star"></i></small>
+              <span id="recipeFavoriteCount${index+1}"></span>
             </div>
           </div>
           <ul id="recipeIngredients${index+1}" class="my-3 font-weight-light"></ul>
