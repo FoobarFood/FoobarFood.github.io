@@ -89,13 +89,26 @@ View.createRecipeCard = function(index) {
           <h6 class="card-subtitle mb-2 text-muted text-center">
             <span id="recipeTime${index+1}"></span>
           </h6>
-          <p class="card-text">
-            <ul id="recipeIngredients${index+1}"></ul>
-          </p>
-          <a href="#" class="btn btn-primary" id="recipeBtn${index+1}" target="_blank">Get the Recipe!</a>
-          <p>
-            Source: <a href="#" id="recipeSource${index+1}" target="_blank"></a>
-          </p>
+          <div class="d-flex align-items-center">
+            <div class="mr-auto font-italic">
+              <small>
+                Powered by 
+                <a href='http://www.yummly.co/recipes' target='_blank'><img alt='Yummly' src='https://static.yummly.co/api-logo.png'/></a>
+              </small>
+            </div>
+            <div class="d-flex align-items-center ml-auto">
+              <small><i class="fas fa-star mx-2"></i></small> <span id="recipeFavoriteCount${index+1}"></span>
+            </div>
+          </div>
+          <ul id="recipeIngredients${index+1}" class="my-3 font-weight-light"></ul>
+          <div class="d-flex">
+            <div class="mr-auto">
+              <a href="#" class="btn btn-primary" id="recipeBtn${index+1}" target="_blank">Get the Recipe!</a>
+            </div>
+            <div class="d-flex align-items-center ml-auto">
+              <p class="mb-0">Source: <a href="#" id="recipeSource${index+1}" target="_blank"></a></p>
+            </div>
+          </div>
         </div>
       </div>
     `
