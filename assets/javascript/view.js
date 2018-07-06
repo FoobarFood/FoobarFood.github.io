@@ -69,8 +69,15 @@ View.renderAddFoodMsg = function(msgType, msg) {
   });
 };
 
+View.removeRecipeCards = function(cardsToRemove) {
+  for (var i = 0; i < cardsToRemove.length; i++) {
+    $(`#recipeCard-${cardsToRemove[i]}`).remove();
+  }
+}
+
 View.createRecipeCard = function(index) {
   var $recipeCard = $('<div>', {
+    id: `recipeCard-${index+1}`,
     class: 'content',
     html: `
       <div class="card">

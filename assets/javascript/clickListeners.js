@@ -1,7 +1,5 @@
 var clickListeners = {};
 
-// Weather Stuff
-
 clickListeners.locator = function() {
   $('#location-submit').on('click', function(e){
     e.preventDefault();
@@ -16,6 +14,7 @@ clickListeners.locator = function() {
           var weatherDetails = weatherAPI.getWeatherDetails(response);
 
           $("#fooString").text(`Today in ${cleanName}, it is ${weatherDetails.temperature}°F with ${weatherDetails.description}. The perfect day for...`)
+       
 
           var tempDesc = Utility.convertTemptoDescription(weatherDetails.temperature);
           var weatherCat = Utility.convertWeathertoCategory(weatherDetails.description);
@@ -50,7 +49,8 @@ clickListeners.locator = function() {
               View.addFoodsToSuggestionList(filteredMeals[randomIndices[i]]);
             };
               
-            //shows Main Body Div
+            //shows Main Body Div and removes spash div
+            $("#splashBody").css("display", "none");
             $("#mainBody").removeAttr("style");
           });
       });
@@ -66,6 +66,14 @@ clickListeners.foodBtn = function() {
   $('.btn-group-vertical').on('click', '.foodBtn', function(){
     var foodSuggestion = $(this).attr('data-name');
 
+    // remove recipe cards 4-8
+    View.removeRecipeCards([4, 5 , 6, 7, 8]);
+
+    // remove, then regenerate pagination functionality
+    View.removeRecipesPagination();
+    View.createRecipesPagination(3);
+    App.setupPagination();
+
     recipeSearchAPI.recipeData(foodSuggestion).then(function(response){
       var data = recipeSearchAPI.recipeDataExtraction(response);
 
@@ -73,10 +81,18 @@ clickListeners.foodBtn = function() {
         var recipeId = data[i].id;
 
         View.addRecipeToRecipeInfoSection(i, recipeId);
+        
       };
-    });
 
+      $("#recipeSplash").hide();
+      $("#recipe-details").show();
+
+      // $('.recipeCard').css('display', 'block').animate({
+      //   opacity: 1,
+      // }, 1600);
+    });
   });
+
 }
 
 /*===== clicking on '#addFoodBtn' button inside of modal
@@ -144,9 +160,7 @@ clickListeners.addFoodBtn = function() {
   });
 }
 
-/*===== clicking on '#popularRecipesBtn' button
-
-*/
+/*===== clicking on '#popularRecipesBtn' button */
 clickListeners.popularRecipesBtn = function() {
   $('#popularRecipesBtn').on('click', function(){
     firebaseUtility.getFavorites(8).then(function(snapshot){
@@ -166,7 +180,6 @@ clickListeners.popularRecipesBtn = function() {
       };
 
       // remove, then regenerate pagination functionality
-
       View.removeRecipesPagination();
       View.createRecipesPagination(popularRecipes.length);
       App.setupPagination();
