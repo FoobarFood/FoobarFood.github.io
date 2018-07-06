@@ -35,10 +35,10 @@ else increase value by 1
 firebaseUtility.addFavoriteRecipe = function(recipeId) {
     firebase.database().ref('favorites').child(recipeId).once('value').then(function(snapshot){ 
        if (snapshot.exists()) {
-           var favoritesCount = snapshot.val() + 1;
-           firebase.database().ref('favorites').child(recipeId).set(favoritesCount);
+            var favoritesCount = snapshot.val() + 1;
+            firebase.database().ref('favorites').child(recipeId).set(favoritesCount);
        } else {
-           firebase.database().ref('favorites').child(recipeId).set(1);
+            firebase.database().ref('favorites').child(recipeId).set(1);
        };
     });
 }

@@ -191,3 +191,15 @@ clickListeners.popularRecipesBtn = function() {
     });
   });
 }
+
+/*===== clicking on '#addFavoriteBtn' div */
+clickListeners.addFavoriteBtn = function() { 
+  $('#recipe-details').on('click', '.addFavoriteBtn', function(){
+    var currFavCount = parseInt($(this).find('span.fav-count').text());
+
+    firebaseUtility.addFavoriteRecipe($(this).attr('data-recipeId'))
+
+    $(this).find('span.fav-count').text(currFavCount + 1);
+    $(this).attr('disabled', true);
+  });
+}

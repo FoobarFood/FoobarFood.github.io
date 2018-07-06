@@ -2,7 +2,7 @@ View = {};
 
 // uses the recipeId to make a getRecipeAPI call to get recipe data for display
 View.addRecipeToRecipeInfoSection = function(index, recipeId, favoriteCount) {
-  $(`#recipeTitle${index+1}`).attr('data-recipeId', recipeId);
+  $(`#recipeFavoriteCount${index+1}`).parent().attr('data-recipeId', recipeId)
 
   if (favoriteCount) {
     $(`#recipeFavoriteCount${index+1}`).text(favoriteCount);
@@ -109,8 +109,10 @@ View.createRecipeCard = function(index) {
               </small>
             </div>
             <div class="d-flex align-items-center ml-auto">
-              <small class="mr-1"><i class="fas fa-star"></i></small>
-              <span id="recipeFavoriteCount${index+1}"></span>
+              <button role="button" class="addFavoriteBtn border-0">
+                <span class="mr-1"><i class="fas fa-star"></i></span>
+                <span class="fav-count" id="recipeFavoriteCount${index+1}"></span>
+              </button>
             </div>
           </div>
           <ul id="recipeIngredients${index+1}" class="my-3 font-weight-light"></ul>

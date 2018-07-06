@@ -195,3 +195,11 @@ background-color:#c98474 ;
   border-color:#dc8239;
   color: white;
 }
+
+/* CSS for .addFavoriteBtn */
+.addFavoriteBtn:hover {
+  color: #dc8239;
+}
+.addFavoriteBtn:disabled {
+  color: #9a031e;
+}

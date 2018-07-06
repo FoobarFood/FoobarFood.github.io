@@ -5,6 +5,7 @@ var App = (function(){
     clickListeners.foodBtn();
     clickListeners.addFoodBtn();
     clickListeners.popularRecipesBtn();
+    clickListeners.addFavoriteBtn();
     View.createRecipeCard(0);
     View.createRecipeCard(1);
     View.createRecipeCard(2);
