@@ -199,9 +199,13 @@ background-color:#c98474 ;
 /* CSS for .addFavoriteBtn */
 .addFavoriteBtn:hover {
   color: #dc8239;
+  cursor: pointer;
 }
 .addFavoriteBtn:disabled {
   color: #9a031e;
+}
+.addFavoriteBtn:disabled:hover {
+  cursor: default;
 }
 
 /* Media Queries */
