@@ -12,7 +12,6 @@ var App = (function(){
 
   function setupPagination() {
     var nombrePage = $('.content').length;
-    console.log(nombrePage)
 
     function showPage(pagination) {
       var currPage = $('.page-item.active').index();
