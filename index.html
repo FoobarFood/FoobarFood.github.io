@@ -27,33 +27,29 @@
 
 <body>
   <!-- Jumbotron Section-->
-  <div class="jumbotron">
+  <div class="jumbotron rounded-0">
     <div class="row">
-      <div class="col-lg-12 col-md-6">
+      <div class="col-12">
         <h1 class="text-center"><img class="iconJumbo" src="./assets/images/iconsmall.png" alt="icon">FORKCAST</h1>
          <form>
           <div class="form-row justify-content-center">
-            <div class="col-auto">
+            <div class="col-auto my-1">
               <input type="text" class="form-control" id="location-input" placeholder="City, State or Zip Code">
             </div>
-            <div class="row">
-              <div class="col">
-                <div class="form-group col-auto">
-                  <select class="form-control" id="mealSelect">
-                    <option>Everything!</option>
-                    <option>Breakfast</option>
-                    <option>Lunch</option>
-                    <option>Dinner</option>
-                    <option>Snack</option>
-                  </select>
-                </div>
+            <div class="col-auto my-1">
+              <div class="form-group col-auto">
+                <select class="form-control" id="mealSelect">
+                  <option>Everything!</option>
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+                  <option>Snack</option>
+                </select>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-auto">
-                <button type="submit" class="btn btn-light mb-2" id="location-submit">Submit</button>
-              </div>
-            </div>
+            </div>         
+            <div class="col-auto my-1">
+              <button type="submit" class="btn btn-light mb-2" id="location-submit">Submit</button>
+            </div>   
           </div>
         </form>
       </div>
