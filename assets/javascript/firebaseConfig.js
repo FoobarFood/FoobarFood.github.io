@@ -11,12 +11,17 @@ var FirebaseConfig = (function() {
     firebase.initializeApp(config);
   }
 
-  function seed() {
+  function seedFoods() {
     firebase.database().ref('foods').set(FOODS);
+  }
+
+  function seedFavorites() {
+    firebase.database().ref('favorites').set(FAVORITE_RECIPES);
   }
 
   return {
     init: init,
-    seed: seed
+    seedFoods: seedFoods,
+    seedFavorites: seedFavorites
   }
 })();

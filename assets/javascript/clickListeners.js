@@ -1,7 +1,5 @@
 var clickListeners = {};
 
-// Weather Stuff
-
 clickListeners.locator = function() {
   $('#location-submit').on('click', function(e){
     e.preventDefault();
@@ -68,6 +66,14 @@ clickListeners.foodBtn = function() {
   $('.btn-group-vertical').on('click', '.foodBtn', function(){
     var foodSuggestion = $(this).attr('data-name');
 
+    // remove recipe cards 4-8
+    View.removeRecipeCards([4, 5 , 6, 7, 8]);
+
+    // remove, then regenerate pagination functionality
+    View.removeRecipesPagination();
+    View.createRecipesPagination(3);
+    App.setupPagination();
+
     recipeSearchAPI.recipeData(foodSuggestion).then(function(response){
       var data = recipeSearchAPI.recipeDataExtraction(response);
 
@@ -76,20 +82,21 @@ clickListeners.foodBtn = function() {
 
         View.addRecipeToRecipeInfoSection(i, recipeId);
         
-        $("#recipeSplash").hide();
-        $("#recipe").show();
-        
       };
-      
+
+      $("#recipeSplash").hide();
+      $("#recipe-details").show();
+
+      // $('.recipeCard').css('display', 'block').animate({
+      //   opacity: 1,
+      // }, 1600);
     });
-    
   });
 
 }
 
-/*===== clicking on '#addFoodBtn' button of modal
-
-
+/*===== clicking on '#addFoodBtn' button inside of modal
+validates user inputs, displays error msgs, checks if food already in db, writes to db
 */
 clickListeners.addFoodBtn = function() {
   $('#addFoodBtn').on('click', function(){
@@ -150,5 +157,49 @@ clickListeners.addFoodBtn = function() {
         };
       });
     };
+  });
+}
+
+/*===== clicking on '#popularRecipesBtn' button */
+clickListeners.popularRecipesBtn = function() {
+  $('#popularRecipesBtn').on('click', function(){
+    firebaseUtility.getTopFavorites(8).then(function(snapshot){
+      var popularRecipes = [];
+
+      snapshot.forEach(function (childSnapshot) {
+        popularRecipes.unshift({
+          recipeId: childSnapshot.key,
+          favoritesCount: childSnapshot.val()
+        });
+      });
+
+      // creates 'Recipe Cards' for i > 2 (cards already exists for 0-2 in html)
+      if ($('.content').length < 8) { 
+        for (var i = 0; i < popularRecipes.length; i++) {
+          if (i > 2) View.createRecipeCard(i); 
+          View.addRecipeToRecipeInfoSection(i, popularRecipes[i].recipeId, popularRecipes[i].favoritesCount);
+        };
+      };
+
+      // remove, then regenerate pagination functionality
+      View.removeRecipesPagination();
+      View.createRecipesPagination(popularRecipes.length);
+      App.setupPagination();
+
+      $("#recipeSplash").hide();
+      $("#recipe-details").show();
+    });
+  });
+}
+
+/*===== clicking on '#addFavoriteBtn' div */
+clickListeners.addFavoriteBtn = function() { 
+  $('#recipe-details').on('click', '.addFavoriteBtn', function(){
+    var currFavCount = parseInt($(this).find('span.fav-count').text());
+
+    firebaseUtility.addFavoriteRecipe($(this).attr('data-recipeId'))
+
+    $(this).find('span.fav-count').text(currFavCount + 1);
+    $(this).attr('disabled', true);
   });
 }

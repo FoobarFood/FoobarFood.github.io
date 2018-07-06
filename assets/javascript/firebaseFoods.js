@@ -242,3 +242,17 @@ var FOODS = {
         Meal: "Breakfast"
       },
 };
+
+// used in firebaseConfig.seedFavorites()
+var FAVORITE_RECIPES = {
+    'Homemade-Juicy-Burger-Patties-2439322': 26,
+    'Crisp-Bean-Burritos-2433532': 22,
+    'Savory-Crepes-1326965': 15,
+    'Eggplant-Parmesan-512299': 12,
+    'Nutella-Donuts-2341076': 10,
+    'Lasagna-2442133': 8,
+    'Skinny-Oven-Fried-Chicken-2065897': 5,
+    'The-Best-Breakfast-Sandwich_-461453': 3,
+    'Tomato-Tuna-Melts-2250549': 2,
+    'Chicken-and-Dumplings-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41197': 1
+};

@@ -1,7 +1,22 @@
 View = {};
 
 // uses the recipeId to make a getRecipeAPI call to get recipe data for display
-View.addRecipeToRecipeInfoSection = function(index, recipeId) {
+View.addRecipeToRecipeInfoSection = function(index, recipeId, favoriteCount) {
+  $(`#recipeFavoriteCount${index+1}`).parent().attr('data-recipeId', recipeId)
+  $(`#recipeFavoriteCount${index+1}`).parent().attr('disabled', false);
+
+  if (favoriteCount) {
+    $(`#recipeFavoriteCount${index+1}`).text(favoriteCount);
+  } else {
+    firebaseUtility.getFavoriteCount(recipeId).then(function(snapshot){
+      if(snapshot.exists()) {
+        $(`#recipeFavoriteCount${index+1}`).text(snapshot.val());
+      } else {
+        $(`#recipeFavoriteCount${index+1}`).text(0);
+      };
+    });
+  };
+
   getRecipeAPI.requestData(recipeId).then(function(response){
     var recipeData = getRecipeAPI.extractData(response);
 
@@ -66,3 +81,104 @@ View.renderAddFoodMsg = function(msgType, msg) {
     }, 2400);
   });
 };
+
+View.removeRecipeCards = function(cardsToRemove) {
+  for (var i = 0; i < cardsToRemove.length; i++) {
+    $(`#recipeCard-${cardsToRemove[i]}`).remove();
+  }
+}
+
+View.createRecipeCard = function(index) {
+  var $recipeCard = $('<div>', {
+    id: `recipeCard-${index+1}`,
+    class: 'content',
+    html: `
+      <div class="card">
+        <img class="card-img-top" id="recipeImg${index+1}" src="" alt="recipe img">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            <span id="recipeTitle${index+1}"></span>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted text-center">
+            <span id="recipeTime${index+1}"></span>
+          </h6>
+          <div class="d-flex align-items-center">
+            <div class="mr-auto font-italic">
+              <small>
+                Powered by 
+                <a href='http://www.yummly.co/recipes' target='_blank'><img alt='Yummly' src='https://static.yummly.co/api-logo.png'/></a>
+              </small>
+            </div>
+            <div class="d-flex align-items-center ml-auto">
+              <button role="button" class="addFavoriteBtn border-0">
+                <span class="mr-1"><i class="fas fa-star"></i></span>
+                <span class="fav-count" id="recipeFavoriteCount${index+1}"></span>
+              </button>
+            </div>
+          </div>
+          <ul id="recipeIngredients${index+1}" class="my-3 font-weight-light"></ul>
+          <div class="row">
+            <div class="col-12 col-sm-auto my-1">
+              <a href="#" class="btn btn-primary" id="recipeBtn${index+1}" target="_blank">Get the Recipe!</a>
+            </div>
+            <div class="col-12 col-sm-auto flex-grow-1 my-1"></div>
+            <div class="col-12 col-md-auto d-flex align-items-center text-md-right my-1">
+              <p class="mb-0">Source: <a href="#" id="recipeSource${index+1}" target="_blank"></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `
+  });
+  $('#recipe-details').append($recipeCard);
+}
+
+View.removeRecipesPagination = function() {
+  $('#recipesPagination').empty();
+}
+
+View.createRecipesPagination = function(length){
+  var $paginationNav = $('<nav>', {
+    'aria-label': 'Recipe navigation',
+    html: `
+      <ul class="pagination"></ul>
+    `
+  });
+
+  $('#recipesPagination').append($paginationNav);
+
+  // 1 ... n
+  for (var i = 0; i < length; i++) {
+    var $li = $('<li>', {
+      class: 'page-item',
+      html: `<a class="page-link" href="#recipe-details">${i+1}</a>`
+    });
+    $('#recipesPagination nav ul').append($li);
+  };
+
+  // «
+  var $laquoLi = $('<li>', {
+    class: 'page-item', 
+    html: `
+      <a class="page-link" href="#recipe-details" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    `
+  });
+
+  $('#recipesPagination nav ul').prepend($laquoLi);
+
+  // »
+  var $raquoLi = $('<li>', {
+    class: 'page-item', 
+    html: `
+      <a class="page-link" href="#recipe-details" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    `
+  });
+
+  $('#recipesPagination nav ul').append($raquoLi);
+}
