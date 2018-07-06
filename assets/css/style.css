@@ -203,3 +203,12 @@ background-color:#c98474 ;
 .addFavoriteBtn:disabled {
   color: #9a031e;
 }
+
+/* Media Queries */
+@media (max-width: 576px) { 
+  .foodBtn {
+    margin-bottom: 10px;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
