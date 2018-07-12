@@ -1,8 +1,18 @@
-# FoobarFood.github.io
+# Forkcast
 
-The Foobar Food website allows users to find comfort foods to eat based on the weather at their location. Our extensive database of comfort foods includes breakfast, lunch, dinner, and snack options to please any user's palette. 
+[Check it out!](https://forkcastfoods.github.io)
 
-The user inputs their location based on city or zip code, then selects what type of meal they want. Their location input is used to determine the weather for their area. The weather information is then used to select a few meal options from our database that match the weather conditions. The website suggests 5 meals, with 3 recipes for each meal suggestion. Recipes include a photo, a link to the full recipe, a list of ingredients, and cooking time. Users may also input their own comfort food to our database.
+## Concept
+
+The *Forkcast* app allows users to find comfort foods to eat based on the weather at their location. Our extensive database of comfort foods includes breakfast, lunch, dinner, and snack options to please any user's palette. 
+
+The user inputs their location based on city, state, or zip code, then selects what type of meal they want. Their location input is used to determine the weather for their area. The weather information is then used to select a few meal options from our database that match the weather conditions. The app suggests 5 meals, with 3 recipes for each meal suggestion. Recipes include a photo, a link to the full recipe, a list of ingredients, and cooking time. 
+
+Users may also input their own comfort food, associated with certain weather conditions, to our database. 
+
+## Design / Development Process
+
+
 
 # APIs Used
 Open Weather Map: https://openweathermap.org/api
