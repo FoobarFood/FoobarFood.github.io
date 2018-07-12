@@ -10,7 +10,29 @@ The user inputs their location based on city, state, or zip code, then selects w
 
 Users may also input their own comfort food, associated with certain weather conditions, to our database. 
 
-## Design / Development Process
+## Motivation
+
+The goal of *Forkcast* is to provide anyone, anywhere a quick and convenient way to get appealing food suggestions. By incorporating the weather into the calculation of what food is suggested, our app is able to recommend foods that feel appropriate and appetizing with respect to the temperature and outside conditions. As the database of comfort foods expands, users will have the added benefit of increased variety in the food suggestions - never again will they eat the same old boring meals! 
+
+---
+
+## Development Process & Design
+
+Our development team ([Anthony S.](https://github.com/ats89), [James C.](https://github.com/Faolun), [Julia S.](https://github.com/julesanne493), and [Malvika P.](https://github.com/malvikapchari)) followed an Agile Development Process flow. We started with our main concept, 
+
+> As a user, I want food suggestions based on my location and weather.
+
+and broke it down into a series of smaller user stories, each with its associated tasks:
+
+> As a user, I want to be able to input my location.
+  * hello
+  * hello
+
+> As a user, I want to see the weather at my location.
+
+> As a user, I want food suggestions based 
+
+
 
 
 
