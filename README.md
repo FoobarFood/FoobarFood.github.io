@@ -68,24 +68,20 @@ The app is mobile responsive and also includes design features such as paginatio
 
 ## Technologies Used
 
+* **APIs**
+  * [Open Weather Map](https://openweathermap.org/api): Provides us with temperature and main weather description (clear, clouds, raining, etc.) - these temperature and weather descriptors get matched with foods in our database.
+  * [Bing Maps](https://msdn.microsoft.com/en-us/library/dd877180.aspx): Open Weather Map does not support “City, State” queries, so we needed an alternate way to fetch the weather when the user inputs their location this way. By running the location through Bing Maps, we can generate longitude and latitude coordinates for use in our Open Weather Map API function.
+  * [Yummly](https://developer.yummly.com/): Large recipe database that provides us with everything we need to display recipes to the user (image, cooking time, ingredients, recipe link).
+* **Firebase**: Storage of foods database and favorite counts for recipes.
+* **JavaScript**
+* **jQuery**, **AJAX**
+* Bootstrap, CSS3, HTML5
 
+---
 
+## Directions for Future Development
 
-
-# APIs Used
-Open Weather Map: https://openweathermap.org/api
-Yummly: https://developer.yummly.com/
-Bing Maps: https://msdn.microsoft.com/en-us/library/dd877180.aspx
-
-# Open Weather Map functionality
-Provides us with temperature and main weather description (cloudy, sunny, raining)
-These temperature and weather descriptors get matched with foods in our database
-
-# Bing Maps
-Open Weather Map does not support “City, State” queries, so we needed an alternate way to fetch the weather when the user inputs their location this way
-By running the location through Bing Maps, we can generate the zip code and use it in our Open Weather Map API function
-This also allows us to validate user input
-
-# Yummly 
-Large recipe database that provides us with everything we need to display recipes to the user (image, cooking time, ingredients, recipe link)
-
+* Expand database of foods
+* Improve/tweak the logic behind how food, weather, and location are associated
+* Error handling in the event APIs return undesirable results
+* General UI/UX improvements
