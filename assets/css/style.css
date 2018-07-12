@@ -208,6 +208,15 @@ background-color:#c98474 ;
   cursor: default;
 }
 
+/* CSS for footer */
+footer a {
+  color: black;
+}
+footer a:hover {
+  text-decoration: none;
+  color: #ffffff85;
+}
+
 /* Media Queries */
 @media (max-width: 576px) { 
   .foodBtn {
