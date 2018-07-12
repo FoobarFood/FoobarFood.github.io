@@ -2,6 +2,10 @@
 
 [Check it out!](https://forkcastfoods.github.io)
 
+![Forkcast](assets/images/about/forkcast.gif)
+
+---
+
 ## Concept
 
 The *Forkcast* app allows users to find comfort foods to eat based on the weather at their location. Our extensive database of comfort foods includes breakfast, lunch, dinner, and snack options to please any user's palette. 
@@ -49,11 +53,20 @@ Once these initial tasks were completed and we had a *minimally viable product*,
 
 The app was built over a 5-6 day time constraint, with daily stand-up meetings to keep everyone on the team informed of the latest developments and encourage collaboration. 
 
-Tools used: Git / pull requests + reviews, Github project board and issues, Slack
+Tools used for project management and communication: Git / pull requests + reviews, Github project board and issues, Slack
 
 ---
 
+## App Demo
 
+The app is mobile responsive and also includes design features such as pagination for loaded recipes and form validation for adding comfort foods.
+
+![forkcast-get-suggestions](assets/images/about/forkcast-get-suggestions.gif)
+![forkcast-get-recipes](assets/images/about/forkcast-get-recipes.gif)
+![forkcast-popular-recipes](assets/images/about/forkcast-popular-recipes.gif)
+![forkcast-add-food](assets/images/about/forkcast-add-food.gif)
+
+## Technologies Used
 
 
 
