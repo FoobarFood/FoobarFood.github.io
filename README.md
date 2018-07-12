@@ -18,19 +18,42 @@ The goal of *Forkcast* is to provide anyone, anywhere a quick and convenient way
 
 ## Development Process & Design
 
-Our development team ([Anthony S.](https://github.com/ats89), [James C.](https://github.com/Faolun), [Julia S.](https://github.com/julesanne493), and [Malvika P.](https://github.com/malvikapchari)) followed an Agile Development Process flow. We started with our main concept, 
+Our development team ([Anthony S.](https://github.com/ats89), [James C.](https://github.com/Faolun), [Julia S.](https://github.com/julesanne493), and [Malvika P.](https://github.com/malvikapchari)) followed an *Agile Development* process flow. We started with our main concept, 
 
 > As a user, I want food suggestions based on my location and weather.
 
-and broke it down into a series of smaller user stories, each with its associated tasks:
+We then broke it down into a series of smaller user stories, each with its associated tasks:
 
 > As a user, I want to be able to input my location.
-  * hello
-  * hello
+  * Create a form that captures user location input.
+  * When user clicks submit, the location input is passed to a Bing API request.
+  * The Bing API request returns longitude and latitude coordinates.
 
 > As a user, I want to see the weather at my location.
+  * Use the coordinates (from Bing API) as params for an Open Weather API request.
+  * The Open Weather API request returns temperature and weather description data.
+  * Display the weather data at user-specified location.
 
-> As a user, I want food suggestions based 
+> As a user, I want food suggestions based on the weather
+  * Create a database of foods to suggest - each food item must have associated weather data (temperature, weather condition). 
+  * Use the weather data (from Open Weather API) and the foods from database to come up with a list of 5 suggested foods.
+  * Display the food suggestions to the user.
+
+Once these initial tasks were completed and we had a *minimally viable product*, we improved UI/UX and added additional user stories/features:
+
+> As a user, I want to explore recipes associated with each food suggestion.
+
+> As a user, I want to be able to add my own comfort food.
+
+> As a user, I want to see the most popular recipes amongst all users.
+
+The app was built over a 5-6 day time constraint, with daily stand-up meetings to keep everyone on the team informed of the latest developments and encourage collaboration. 
+
+Tools used: Git / pull requests + reviews, Github project board and issues, Slack
+
+---
+
+
 
 
 
