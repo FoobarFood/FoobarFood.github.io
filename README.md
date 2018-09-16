@@ -1,5 +1,7 @@
 # Forkcast
 
+*Find comfort foods to eat based on the weather*
+
 [Check it out!](https://forkcastfoods.github.io)
 
 ![Forkcast](assets/images/about/forkcast.gif)
@@ -67,7 +69,7 @@ Tools used for project management and communication: Git / pull requests + revie
 
 ## App Demo
 
-The app is mobile responsive and also includes design features such as pagination for loaded recipes and form validation for adding comfort foods.
+The [app](https://forkcastfoods.github.io) is mobile responsive and also includes design features such as pagination for loaded recipes and form validation for adding comfort foods.
 
 ![forkcast-get-suggestions](assets/images/about/forkcast-get-suggestions.gif)
 ![forkcast-get-recipes](assets/images/about/forkcast-get-recipes.gif)
