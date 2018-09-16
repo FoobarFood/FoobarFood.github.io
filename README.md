@@ -4,6 +4,14 @@
 
 ![Forkcast](assets/images/about/forkcast.gif)
 
+### Table of Contents
+
+[Concept](#concept)<br>
+[Motivation](#motivation)<br>
+[Development Process & Design](#development-process-&-design)<br>
+[App Demo](#app-demo)<br>
+[Directions for Future Development](#directions-for-future-development)
+
 ---
 
 ## Concept
