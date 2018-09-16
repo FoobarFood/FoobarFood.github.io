@@ -8,7 +8,7 @@
 
 [Concept](#concept)<br>
 [Motivation](#motivation)<br>
-[Development Process & Design](#development-process-&-design)<br>
+[Development Process and Design](#development-process-and-design)<br>
 [App Demo](#app-demo)<br>
 [Directions for Future Development](#directions-for-future-development)
 
@@ -28,7 +28,7 @@ The goal of *Forkcast* is to provide anyone, anywhere a quick and convenient way
 
 ---
 
-## Development Process & Design
+## Development Process and Design
 
 Our development team ([Anthony S.](https://github.com/ats89), [James C.](https://github.com/Faolun), [Julia S.](https://github.com/julesanne493), and [Malvika P.](https://github.com/malvikapchari)) followed an *Agile Development* process flow. We started with our main concept, 
 
